@@ -8,12 +8,12 @@ package View;
  *
  * @author Eithel
  */
-public class Resultados extends javax.swing.JFrame {
+public class Votar extends javax.swing.JFrame {
 
     /**
-     * Creates new form Resultados
+     * Creates new form Votar
      */
-    public Resultados() {
+    public Votar() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -44,25 +44,23 @@ public class Resultados extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(632, Short.MAX_VALUE)
+                .addContainerGap(624, Short.MAX_VALUE)
                 .addComponent(btnSalir)
-                .addGap(28, 28, 28))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(506, Short.MAX_VALUE)
+                .addContainerGap(557, Short.MAX_VALUE)
                 .addComponent(btnSalir)
-                .addGap(28, 28, 28))
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,7 +79,7 @@ public class Resultados extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-  
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
