@@ -13,21 +13,21 @@ public class Candidates {
     private String id_number;
     private String name;
     private String politicParty;
-    private String imagen;
+    private String image;
 
-    public Candidates(String id_number, String name, String politicParty, String imagen) {
+    public Candidates(String id_number, String name, String politicParty, String image) {
         this.id_number = id_number;
         this.name = name;
         this.politicParty = politicParty;
-        this.imagen = imagen;
+        this.image = image;
     }
 
-    public Candidates(int id, String id_number, String name, String politicParty, String imagen) {
+    public Candidates(int id, String id_number, String name, String politicParty, String image) {
         this.id = id;
         this.id_number = id_number;
         this.name = name;
         this.politicParty = politicParty;
-        this.imagen = imagen;
+        this.image = image;
     }
 
     public int getId() {
@@ -62,12 +62,12 @@ public class Candidates {
         this.politicParty = politicParty;
     }
 
-    public String getImagen() {
-        return imagen;
+    public String getImage() {
+        return image;
     }
 
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
+    public void setImagen(String image) {
+        this.image = image;
     }
     
 }
