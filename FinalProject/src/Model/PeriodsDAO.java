@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author Eithel
  */
-public class CRUDPeriods {
+public class PeriodsDAO {
     
     // Method to create a new period 
     public void create(Periods periods) {

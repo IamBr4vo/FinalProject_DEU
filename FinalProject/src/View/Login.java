@@ -50,6 +50,8 @@ public class Login extends javax.swing.JFrame {
         lblExit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         PNMain.setBackground(new java.awt.Color(255, 255, 255));
         PNMain.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));

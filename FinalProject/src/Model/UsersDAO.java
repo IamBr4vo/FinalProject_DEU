@@ -15,7 +15,7 @@ import java.sql.ResultSet;
  *
  * @author Eithel
  */
-public class CRUDUsers {
+public class UsersDAO {
     // Method to create a new user
 
     public void create(Users user) {
