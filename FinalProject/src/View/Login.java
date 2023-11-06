@@ -48,6 +48,7 @@ public class Login extends javax.swing.JFrame {
         pnBar = new javax.swing.JPanel();
         pnButtonExit = new javax.swing.JPanel();
         lblExit = new javax.swing.JLabel();
+        btnButtonCheckIn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -205,6 +206,12 @@ public class Login extends javax.swing.JFrame {
 
         PNMain.add(pnBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 40));
 
+        btnButtonCheckIn.setBackground(new java.awt.Color(0, 100, 190));
+        btnButtonCheckIn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnButtonCheckIn.setForeground(new java.awt.Color(255, 255, 255));
+        btnButtonCheckIn.setText("Registrarse");
+        PNMain.add(btnButtonCheckIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 140, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -289,6 +296,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PNMain;
+    private javax.swing.JButton btnButtonCheckIn;
     private javax.swing.JLabel btnButtonEnter;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblExit;
