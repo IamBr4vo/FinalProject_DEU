@@ -23,9 +23,6 @@ public class CtrlUsers {
     private UsersDAO dao;
     private int id; // Para mantener el ID del usuario seleccionado
 
-    public CtrlUsers(UsersDAO dao) {
-        this.dao = dao;
-    }
 
     public void loadDataUsers(JTable table) {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
@@ -87,5 +84,9 @@ public class CtrlUsers {
         telephone.setText("");
         key.setText("");
         rol_id.setText("");
+    }
+
+    public void loadDataVoters(JTable tblVoters) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

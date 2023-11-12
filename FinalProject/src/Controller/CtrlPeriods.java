@@ -27,9 +27,6 @@ public class CtrlPeriods {
     private int id; // To maintain the ID of the selected period
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-    public CtrlPeriods(PeriodsDAO dao) {
-        this.dao = dao;
-    }
 
     public void loadDataPeriods(JTable table) {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
