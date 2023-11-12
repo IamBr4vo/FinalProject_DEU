@@ -266,6 +266,7 @@ public class Login extends javax.swing.JFrame {
     private void btnButtonEnterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonEnterMouseClicked
         String enteredMail = txtUser.getText();
         String enteredPassword = new String(psPassword.getPassword());
+        
     }//GEN-LAST:event_btnButtonEnterMouseClicked
 
     private void psPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_psPasswordMousePressed

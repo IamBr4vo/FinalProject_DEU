@@ -19,12 +19,8 @@ import javax.swing.table.TableRowSorter;
  * @author Bravo
  */
 public class CtrlCandidates {
-    private CandidatesDAO dao;
+   CandidatesDAO dao = new CandidatesDAO();
     private int id; // To maintain the ID of the selected candidate
-
-    public CtrlCandidates(CandidatesDAO dao) {
-        this.dao = dao;
-    }
 
     public void loadDataCandidates(JTable table) {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
@@ -42,6 +38,7 @@ public class CtrlCandidates {
     public void addCandidate(JTextField IDNumber, JTextField name, JTextField politicParty, JTextField imagen) {
         try {
             this.dao.create(new Candidates(IDNumber.getText(), name.getText(), politicParty.getText(), imagen.getText()));
+            this.clearFields(IDNumber, name, politicParty, imagen);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al agregar el candidato: " + e.toString());
         }

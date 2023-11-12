@@ -12,6 +12,7 @@ public class Users {
     private int id;
     private String id_number;
     private String name;
+    private String email;
     private int age;
     private int telephone;
     private int key;
@@ -20,23 +21,33 @@ public class Users {
     public Users() {
     }
 
-    public Users(int id, String id_number, String name, int age, int telephone, int key, int rol_id) {
+    public Users(int id, String id_number, String name, String email, int age, int telephone, int key, int rol_id) {
         this.id = id;
         this.id_number = id_number;
         this.name = name;
+        this.email = email;
         this.age = age;
         this.telephone = telephone;
         this.key = key;
         this.rol_id = rol_id;
     }
 
-    public Users(String id_number, String name, int age, int telephone, int key, int rol_id) {
+    public Users(String id_number, String name, String email, int age, int telephone, int key, int rol_id) {
         this.id_number = id_number;
         this.name = name;
+        this.email = email;
         this.age = age;
         this.telephone = telephone;
         this.key = key;
         this.rol_id = rol_id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getId() {

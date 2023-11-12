@@ -20,15 +20,16 @@ public class UsersDAO {
 
     public void create(Users user) {
         DBConnection db = new DBConnection();
-        String consultaSQL = "INSERT INTO users (id_number, name, age, telephone, key, rol_id) VALUES (?, ?, ?, ?, ?, ?)";
+        String consultaSQL = "INSERT INTO users (id_number, name, email, age, telephone, key, rol_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(consultaSQL);
             ps.setString(1, user.getId_number());
             ps.setString(2, user.getName());
-            ps.setInt(3, user.getAge());
-            ps.setInt(4, user.getTelephone());
-            ps.setInt(5, user.getKey());
-            ps.setInt(6, user.getRol_id());
+            ps.setString(3, user.getEmail());
+            ps.setInt(4, user.getAge());
+            ps.setInt(5, user.getTelephone());
+            ps.setInt(6, user.getKey());
+            ps.setInt(7, user.getRol_id());
             ps.execute();
             JOptionPane.showMessageDialog(null, "Se insertó correctamente el usuario");
         } catch (SQLException e) {
@@ -52,11 +53,12 @@ public class UsersDAO {
                 int id = resultSet.getInt("id");
                 String id_number = resultSet.getString("id_number");
                 String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
                 int age = resultSet.getInt("age");
                 int telephone = resultSet.getInt("telephone");
                 int key = resultSet.getInt("key");
                 int rol_id = resultSet.getInt("rol_id");
-                usersList.add(new Users(id, id_number, name, age, telephone, key, rol_id)); // Create the new users object
+                usersList.add(new Users(id, id_number, name, email, age, telephone, key, rol_id)); // Create the new users object
             }
         } catch (SQLException e) {
             System.err.println("Error: " + e.getMessage());
@@ -71,17 +73,18 @@ public class UsersDAO {
 
         DBConnection db = new DBConnection();
 
-        String consultaSQL = "UPDATE users SET id_number=?, name=?, age=?, telephone=?, key=?, rol_id=? WHERE id=?";
+        String consultaSQL = "UPDATE users SET id_number=?, name=?, email=?, age=?, telephone=?, key=?, rol_id=? WHERE id=?";
 
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(consultaSQL);
             ps.setString(1, user.getId_number());
             ps.setString(2, user.getName());
-            ps.setInt(3, user.getAge());
-            ps.setInt(4, user.getTelephone());
-            ps.setInt(5, user.getKey());
-            ps.setInt(6, user.getRol_id());
-            ps.setInt(7, user.getId());
+            ps.setString(3, user.getEmail());
+            ps.setInt(4, user.getAge());
+            ps.setInt(5, user.getTelephone());
+            ps.setInt(6, user.getKey());
+            ps.setInt(7, user.getRol_id());
+            ps.setInt(8, user.getId());
             ps.execute();
             JOptionPane.showMessageDialog(null, "Modificación Exitosa");
 
@@ -106,5 +109,43 @@ public class UsersDAO {
         } finally {
             db.disconnect();
         }
+    }
+
+    public int getIDRol(String name) {
+        int ID = 0;
+        DBConnection db = new DBConnection();
+        String sql = "SELECT id FROM rols WHERE name = ?";
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(sql);
+            ps.setString(1, name);
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                ID = resultSet.getInt("id");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e.getMessage());
+        } finally {
+            db.disconnect();
+        }
+        return ID;
+    }
+
+    public String getNameRol(int id) {
+        String name = "";
+        DBConnection db = new DBConnection();
+        String sql = "SELECT name FROM rols WHERE id = ?";
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                name = resultSet.getString("name");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e.getMessage());
+        } finally {
+            db.disconnect();
+        }
+        return name;
     }
 }

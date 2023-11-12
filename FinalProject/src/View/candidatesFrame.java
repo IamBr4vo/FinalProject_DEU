@@ -4,11 +4,14 @@
  */
 package View;
 
+import Controller.CtrlCandidates;
+
 /**
  *
  * @author Eithel
  */
 public class candidatesFrame extends javax.swing.JFrame {
+    CtrlCandidates cc = new CtrlCandidates();
 
     /**
      * Creates new form Candidatos
@@ -16,6 +19,15 @@ public class candidatesFrame extends javax.swing.JFrame {
     public candidatesFrame() {
         initComponents();
         setLocationRelativeTo(null);
+        listCandidates();
+    }
+    
+    public void listCandidates(){
+        cc.loadDataCandidates(tblCandidates);
+    }
+    
+    public void clearFileds(){
+        cc.clearFields(txt_numero_identificacion, txt_nombre, txt_partido_politico, txt_imagen);
     }
 
     /**
@@ -54,10 +66,25 @@ public class candidatesFrame extends javax.swing.JFrame {
         lblRuta.setText("La ruta de la imagen:");
 
         btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
         btnModificar.setText("Modifcar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -77,6 +104,11 @@ public class candidatesFrame extends javax.swing.JFrame {
                 "id", "Número de identificación", "Nombre", "Partido político", "Imagen"
             }
         ));
+        tblCandidates.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCandidatesMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblCandidates);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -104,9 +136,10 @@ public class candidatesFrame extends javax.swing.JFrame {
                         .addGap(88, 88, 88)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnSalir)
-                            .addComponent(btnModificar))
-                        .addGap(92, 92, 92)
-                        .addComponent(btnEliminar)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnModificar)
+                                .addGap(92, 92, 92)
+                                .addComponent(btnEliminar)))))
                 .addGap(47, 47, 47)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(53, Short.MAX_VALUE))
@@ -162,6 +195,26 @@ public class candidatesFrame extends javax.swing.JFrame {
        ventanaPrincipal.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        cc.addCandidate(txt_numero_identificacion, txt_nombre, txt_partido_politico, txt_imagen);
+        listCandidates();
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        cc.updateCandidate(txt_numero_identificacion, txt_nombre, txt_partido_politico, txt_imagen);
+        listCandidates();
+        clearFileds();
+    }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        cc.deleteCandidate();
+        listCandidates();
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void tblCandidatesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCandidatesMouseClicked
+        cc.selectedRow(tblCandidates,txt_numero_identificacion, txt_nombre, txt_partido_politico, txt_imagen);
+    }//GEN-LAST:event_tblCandidatesMouseClicked
 
     /**
      * @param args the command line arguments
