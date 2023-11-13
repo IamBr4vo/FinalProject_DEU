@@ -20,9 +20,9 @@ import javax.swing.table.TableRowSorter;
  */
 public class CtrlUsers {
 
-    private UsersDAO dao;
+    UsersDAO dao = new UsersDAO();
     private int id; // Para mantener el ID del usuario seleccionado
-
+    private static int rolId;
 
     public void loadDataUsers(JTable table) {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
@@ -37,17 +37,17 @@ public class CtrlUsers {
         }
     }
 
-    public void addUser(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key, JTextField rol_id) {
+    public void addUser(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key) {
         try {
-            this.dao.create(new Users(IDNumber.getText(), name.getText(), email.getText(), Integer.parseInt(age.getText()), Integer.parseInt(telephone.getText()), Integer.parseInt(key.getText()), Integer.parseInt(rol_id.getText())));
+            this.dao.create(new Users(IDNumber.getText(), name.getText(), email.getText(), Integer.parseInt(age.getText()), Integer.parseInt(telephone.getText()), Integer.parseInt(key.getText()), rolId));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al agregar el usuario: " + e.toString());
         }
     }
 
-    public void updateUser(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key, JTextField rol_id) {
+    public void updateUser(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key) {
         try {
-            this.dao.update(new Users(this.id, IDNumber.getText(), name.getText(),email.getText(),Integer.parseInt(age.getText()), Integer.parseInt(telephone.getText()), Integer.parseInt(key.getText()), Integer.parseInt(rol_id.getText())));
+            this.dao.update(new Users(this.id, IDNumber.getText(), name.getText(), email.getText(), Integer.parseInt(age.getText()), Integer.parseInt(telephone.getText()), Integer.parseInt(key.getText()), rolId));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al actualizar el usuario: " + e.toString());
         }
@@ -57,18 +57,17 @@ public class CtrlUsers {
         this.dao.delete(this.id);
     }
 
-    public void selectedRow(JTable table, JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key, JTextField rol_id) {
+    public void selectedRow(JTable table, JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key) {
         try {
             int row = table.getSelectedRow();
             if (row >= 0) {
                 this.id = Integer.parseInt(table.getValueAt(row, 0).toString());
                 IDNumber.setText(table.getValueAt(row, 1).toString());
                 name.setText(table.getValueAt(row, 2).toString());
-                email.setText(table.getValueAt(row,3).toString());
+                email.setText(table.getValueAt(row, 3).toString());
                 age.setText(table.getValueAt(row, 4).toString());
                 telephone.setText(table.getValueAt(row, 5).toString());
                 key.setText(table.getValueAt(row, 6).toString());
-                rol_id.setText(table.getValueAt(row, 7).toString());
             } else {
                 JOptionPane.showMessageDialog(null, "Fila no seleccionada");
             }
@@ -77,16 +76,15 @@ public class CtrlUsers {
         }
     }
 
-    public void clearFields(JTextField IDNumber, JTextField name, JTextField age, JTextField telephone, JTextField key, JTextField rol_id) {
+    public void clearFields(JTextField IDNumber, JTextField name, JTextField age, JTextField telephone, JTextField key) {
         IDNumber.setText("");
         name.setText("");
         age.setText("");
         telephone.setText("");
         key.setText("");
-        rol_id.setText("");
     }
 
-    public void loadDataVoters(JTable tblVoters) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public static void setRolId(int id) {
+        rolId = id;
     }
 }

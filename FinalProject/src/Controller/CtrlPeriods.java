@@ -23,7 +23,7 @@ import javax.swing.table.TableRowSorter;
  */
 public class CtrlPeriods {
 
-    private PeriodsDAO dao;
+    PeriodsDAO dao = new PeriodsDAO();
     private int id; // To maintain the ID of the selected period
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 

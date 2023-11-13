@@ -20,7 +20,7 @@ public class UsersDAO {
 
     public void create(Users user) {
         DBConnection db = new DBConnection();
-        String consultaSQL = "INSERT INTO users (id_number, name, email, age, telephone, key, rol_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String consultaSQL = "INSERT INTO users (id_number, name, email, age, telephone, code, rol_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(consultaSQL);
             ps.setString(1, user.getId_number());
@@ -56,7 +56,7 @@ public class UsersDAO {
                 String email = resultSet.getString("email");
                 int age = resultSet.getInt("age");
                 int telephone = resultSet.getInt("telephone");
-                int key = resultSet.getInt("key");
+                int key = resultSet.getInt("code");
                 int rol_id = resultSet.getInt("rol_id");
                 usersList.add(new Users(id, id_number, name, email, age, telephone, key, rol_id)); // Create the new users object
             }
@@ -73,7 +73,7 @@ public class UsersDAO {
 
         DBConnection db = new DBConnection();
 
-        String consultaSQL = "UPDATE users SET id_number=?, name=?, email=?, age=?, telephone=?, key=?, rol_id=? WHERE id=?";
+        String consultaSQL = "UPDATE users SET id_number=?, name=?, email=?, age=?, telephone=?, code=?, rol_id=? WHERE id=?";
 
         try {
             PreparedStatement ps = db.getConnection().prepareStatement(consultaSQL);

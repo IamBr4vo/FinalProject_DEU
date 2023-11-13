@@ -19,15 +19,15 @@ public class votersFrame extends javax.swing.JFrame {
     public votersFrame() {
         initComponents();
         setLocationRelativeTo(null);
-    listVoters();
+        this.listVoters();
     }
     
     public void listVoters(){
-        vt.loadDataVoters(tblVoters);
+        vt.loadDataUsers(tblVoters);
     }
     
     public void clearFileds(){
-        vt.clearFields(txt_numero_identificacion,txt_nombre,txt_email,txt_telefono,txt_clave,txt_fecha_limite);
+        vt.clearFields(txt_numero_identificacion,txt_nombre,txt_email,txt_telefono,txt_clave);
     }
 
     /**
@@ -74,7 +74,6 @@ public class votersFrame extends javax.swing.JFrame {
 
         lblClave.setText("Esta es su clave:");
 
-        txt_clave.setEditable(false);
         txt_clave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_claveActionPerformed(evt);
@@ -119,7 +118,7 @@ public class votersFrame extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "id", "Número de identificación", "Nombre", "Email", "Edad", "Teléfono", "Llave", "Rol"
+                "id", "Número de identificación", "Nombre", "Email", "Edad", "Teléfono", "Clave", "Rol"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -282,16 +281,16 @@ public class votersFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_fecha_limiteActionPerformed
 
     private void tblVotersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblVotersMouseClicked
-        vt.selectedRow(tblVoters,txt_numero_identificacion, txt_nombre, txt_email, txt_Age, txt_telefono, txt_clave, txt_fecha_limite);
+        vt.selectedRow(tblVoters,txt_numero_identificacion, txt_nombre, txt_email, txt_Age, txt_telefono, txt_clave);
     }//GEN-LAST:event_tblVotersMouseClicked
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        vt.addUser(txt_numero_identificacion, txt_nombre, txt_email, txt_Age, txt_telefono, txt_clave, txt_fecha_limite);
+        vt.addUser(txt_numero_identificacion, txt_nombre, txt_email, txt_Age, txt_telefono, txt_clave);
         listVoters();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        vt.updateUser(txt_numero_identificacion, txt_nombre, txt_email, txt_Age, txt_telefono, txt_clave, txt_fecha_limite);
+        vt.updateUser(txt_numero_identificacion, txt_nombre, txt_email, txt_Age, txt_telefono, txt_clave);
         listVoters();
         clearFileds();
     }//GEN-LAST:event_btnModificarActionPerformed

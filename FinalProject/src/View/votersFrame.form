@@ -191,9 +191,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_clave">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_claveActionPerformed"/>
           </Events>
@@ -252,7 +249,7 @@
                     <Column editable="false" title="Email" type="java.lang.Object"/>
                     <Column editable="false" title="Edad" type="java.lang.Object"/>
                     <Column editable="false" title="Tel&#xe9;fono" type="java.lang.Object"/>
-                    <Column editable="false" title="Llave" type="java.lang.Object"/>
+                    <Column editable="false" title="Clave" type="java.lang.Object"/>
                     <Column editable="false" title="Rol" type="java.lang.Object"/>
                   </Table>
                 </Property>

@@ -19,7 +19,7 @@ public class candidatesFrame extends javax.swing.JFrame {
     public candidatesFrame() {
         initComponents();
         setLocationRelativeTo(null);
-        listCandidates();
+        this.listCandidates();
     }
     
     public void listCandidates(){

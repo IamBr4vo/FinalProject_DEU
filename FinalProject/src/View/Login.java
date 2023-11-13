@@ -4,6 +4,7 @@
  */
 package View;
 
+import Controller.login;
 import java.awt.Color;
 
 /**
@@ -17,6 +18,7 @@ public class Login extends javax.swing.JFrame {
      */
     private int xMouse;
     private int yMouse;
+    login log = new login();
 
     public Login() {
         initComponents();
@@ -264,9 +266,9 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnButtonEnterMouseEntered
 
     private void btnButtonEnterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonEnterMouseClicked
-        String enteredMail = txtUser.getText();
-        String enteredPassword = new String(psPassword.getPassword());
-        
+        String email = txtUser.getText();
+        int key = Integer.parseInt(psPassword.getText());
+        this.log.login(email, key);
     }//GEN-LAST:event_btnButtonEnterMouseClicked
 
     private void psPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_psPasswordMousePressed
