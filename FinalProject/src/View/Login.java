@@ -4,6 +4,7 @@
  */
 package View;
 
+import Controller.CtrlUsers;
 import Controller.login;
 import java.awt.Color;
 
@@ -19,6 +20,7 @@ public class Login extends javax.swing.JFrame {
     private int xMouse;
     private int yMouse;
     login log = new login();
+    CtrlUsers user = new CtrlUsers();
 
     public Login() {
         initComponents();
@@ -212,6 +214,11 @@ public class Login extends javax.swing.JFrame {
         btnButtonCheckIn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnButtonCheckIn.setForeground(new java.awt.Color(255, 255, 255));
         btnButtonCheckIn.setText("Registrarse");
+        btnButtonCheckIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnButtonCheckInActionPerformed(evt);
+            }
+        });
         PNMain.add(btnButtonCheckIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 140, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -296,6 +303,10 @@ public class Login extends javax.swing.JFrame {
             psPassword.setForeground(Color.GRAY);
         }
     }//GEN-LAST:event_txtUserMousePressed
+
+    private void btnButtonCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnButtonCheckInActionPerformed
+        user.setRolId(2);
+    }//GEN-LAST:event_btnButtonCheckInActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PNMain;

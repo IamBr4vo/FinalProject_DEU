@@ -46,7 +46,7 @@ public class CtrlPeriods {
             Date finish_date = dateFormat.parse(finishDate.getText());
             this.dao.create(new Periods(start_date, finish_date, status.getText()));
         } catch (ParseException e) {
-            JOptionPane.showMessageDialog(null, "Error al convertir fechas: " + e.toString());
+            JOptionPane.showMessageDialog(null, "Error de formato, el indicado es año-mes-día");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al agregar el período: " + e.toString());
         }
@@ -58,7 +58,7 @@ public class CtrlPeriods {
             Date finish_date = dateFormat.parse(finishDate.getText());
             this.dao.update(new Periods(this.id, start_date, finish_date, status.getText()));
         } catch (ParseException e) {
-            JOptionPane.showMessageDialog(null, "Error al convertir fechas: " + e.toString());
+            JOptionPane.showMessageDialog(null, "Error de formato, el indicado es año-mes-día");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al actualizar el período: " + e.toString());
         }

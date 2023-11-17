@@ -20,6 +20,7 @@ public class votersFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.listVoters();
+        
     }
     
     public void listVoters(){
