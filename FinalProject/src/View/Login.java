@@ -20,7 +20,6 @@ public class Login extends javax.swing.JFrame {
     private int xMouse;
     private int yMouse;
     login log = new login();
-    CtrlUsers user = new CtrlUsers();
 
     public Login() {
         initComponents();
@@ -52,7 +51,8 @@ public class Login extends javax.swing.JFrame {
         pnBar = new javax.swing.JPanel();
         pnButtonExit = new javax.swing.JPanel();
         lblExit = new javax.swing.JLabel();
-        btnButtonCheckIn = new javax.swing.JButton();
+        pnButtonRegister = new javax.swing.JPanel();
+        btnButtonRegister = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -86,7 +86,7 @@ public class Login extends javax.swing.JFrame {
 
         txtUser.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         txtUser.setForeground(new java.awt.Color(204, 204, 204));
-        txtUser.setText("Ingrese su nombre de usuario");
+        txtUser.setText("Ingrese su numero de cedula");
         txtUser.setBorder(null);
         txtUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -137,15 +137,15 @@ public class Login extends javax.swing.JFrame {
         pnButtonEnter.setLayout(pnButtonEnterLayout);
         pnButtonEnterLayout.setHorizontalGroup(
             pnButtonEnterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnButtonEnterLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnButtonEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnButtonEnterLayout.createSequentialGroup()
+                .addComponent(btnButtonEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnButtonEnterLayout.setVerticalGroup(
             pnButtonEnterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnButtonEnterLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnButtonEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnButtonEnterLayout.createSequentialGroup()
+                .addComponent(btnButtonEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         PNMain.add(pnButtonEnter, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 110, 50));
@@ -210,16 +210,41 @@ public class Login extends javax.swing.JFrame {
 
         PNMain.add(pnBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 40));
 
-        btnButtonCheckIn.setBackground(new java.awt.Color(0, 100, 190));
-        btnButtonCheckIn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnButtonCheckIn.setForeground(new java.awt.Color(255, 255, 255));
-        btnButtonCheckIn.setText("Registrarse");
-        btnButtonCheckIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnButtonCheckInActionPerformed(evt);
+        pnButtonRegister.setBackground(new java.awt.Color(0, 134, 190));
+
+        btnButtonRegister.setBackground(new java.awt.Color(0, 100, 190));
+        btnButtonRegister.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnButtonRegister.setForeground(new java.awt.Color(255, 255, 255));
+        btnButtonRegister.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnButtonRegister.setText("Registrarse");
+        btnButtonRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnButtonRegister.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnButtonRegister.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnButtonRegisterMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnButtonRegisterMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnButtonRegisterMouseExited(evt);
             }
         });
-        PNMain.add(btnButtonCheckIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 140, 50));
+
+        javax.swing.GroupLayout pnButtonRegisterLayout = new javax.swing.GroupLayout(pnButtonRegister);
+        pnButtonRegister.setLayout(pnButtonRegisterLayout);
+        pnButtonRegisterLayout.setHorizontalGroup(
+            pnButtonRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnButtonRegister, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+        );
+        pnButtonRegisterLayout.setVerticalGroup(
+            pnButtonRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnButtonRegisterLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnButtonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        PNMain.add(pnButtonRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -264,19 +289,18 @@ public class Login extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_lblExitMouseClicked
 
-    private void btnButtonEnterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonEnterMouseExited
-        pnButtonEnter.setBackground(new Color(0, 134, 190));
-    }//GEN-LAST:event_btnButtonEnterMouseExited
+    private void btnButtonRegisterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonRegisterMouseExited
+        pnButtonRegister.setBackground(new Color(0, 134, 190));
+    }//GEN-LAST:event_btnButtonRegisterMouseExited
 
-    private void btnButtonEnterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonEnterMouseEntered
-        pnButtonEnter.setBackground(new Color(0, 156, 233));
-    }//GEN-LAST:event_btnButtonEnterMouseEntered
+    private void btnButtonRegisterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonRegisterMouseEntered
+        pnButtonRegister.setBackground(new Color(0, 156, 233));
+    }//GEN-LAST:event_btnButtonRegisterMouseEntered
 
-    private void btnButtonEnterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonEnterMouseClicked
-        String email = txtUser.getText();
-        int key = Integer.parseInt(psPassword.getText());
-        this.log.login(email, key);
-    }//GEN-LAST:event_btnButtonEnterMouseClicked
+    private void btnButtonRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonRegisterMouseClicked
+        Register regis = new Register();
+        regis.setVisible(true);
+    }//GEN-LAST:event_btnButtonRegisterMouseClicked
 
     private void psPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_psPasswordMousePressed
         if (String.valueOf(psPassword.getPassword()).equals("********")) {
@@ -284,7 +308,7 @@ public class Login extends javax.swing.JFrame {
             psPassword.setForeground(Color.BLACK);
         }
         if (txtUser.getText().isEmpty()) {
-            txtUser.setText("Ingrese su nombre de usuario");
+            txtUser.setText("Ingrese su numero de cedula");
             txtUser.setForeground(Color.GRAY);
         }
     }//GEN-LAST:event_psPasswordMousePressed
@@ -294,7 +318,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUserActionPerformed
 
     private void txtUserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUserMousePressed
-        if (txtUser.getText().equals("Ingrese su nombre de usuario")) {
+        if (txtUser.getText().equals("Ingrese su numero de cedula")) {
             txtUser.setText("");
             txtUser.setForeground(Color.BLACK);
         }
@@ -304,14 +328,25 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtUserMousePressed
 
-    private void btnButtonCheckInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnButtonCheckInActionPerformed
-        user.setRolId(2);
-    }//GEN-LAST:event_btnButtonCheckInActionPerformed
+    private void btnButtonEnterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonEnterMouseClicked
+
+        String email = txtUser.getText();
+        int key = Integer.parseInt(psPassword.getText());
+        this.log.login(email, key);
+    }//GEN-LAST:event_btnButtonEnterMouseClicked
+
+    private void btnButtonEnterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonEnterMouseEntered
+        pnButtonEnter.setBackground(new Color(0, 156, 233));
+    }//GEN-LAST:event_btnButtonEnterMouseEntered
+
+    private void btnButtonEnterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonEnterMouseExited
+        pnButtonEnter.setBackground(new Color(0, 134, 190));
+    }//GEN-LAST:event_btnButtonEnterMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PNMain;
-    private javax.swing.JButton btnButtonCheckIn;
     private javax.swing.JLabel btnButtonEnter;
+    private javax.swing.JLabel btnButtonRegister;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblExit;
     private javax.swing.JLabel lblLogin;
@@ -321,6 +356,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel pnBar;
     private javax.swing.JPanel pnButtonEnter;
     private javax.swing.JPanel pnButtonExit;
+    private javax.swing.JPanel pnButtonRegister;
     private javax.swing.JPasswordField psPassword;
     private javax.swing.JSeparator spPassword;
     private javax.swing.JSeparator spUser;

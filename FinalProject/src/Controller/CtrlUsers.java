@@ -7,6 +7,7 @@ package Controller;
 import Model.Users;
 import Model.UsersDAO;
 import java.util.List;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -37,9 +38,12 @@ public class CtrlUsers {
         }
     }
 
-    public void addUser(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key) {
+    public void addUser(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key, JFrame currentFrame) {
         try {
             this.dao.create(new Users(IDNumber.getText(), name.getText(), email.getText(), Integer.parseInt(age.getText()), Integer.parseInt(telephone.getText()), Integer.parseInt(key.getText()), rolId));
+            if (rolId == 2) {
+                currentFrame.dispose();
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al agregar el usuario: " + e.toString());
         }

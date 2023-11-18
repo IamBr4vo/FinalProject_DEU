@@ -286,7 +286,7 @@ public class votersFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_tblVotersMouseClicked
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        vt.addUser(txt_numero_identificacion, txt_nombre, txt_email, txt_Age, txt_telefono, txt_clave);
+        vt.addUser(txt_numero_identificacion, txt_nombre, txt_email, txt_Age, txt_telefono, txt_clave,this);
         listVoters();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
