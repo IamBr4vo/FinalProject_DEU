@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import java.util.Random;
 
 /**
  *
@@ -78,6 +79,12 @@ public class CtrlUsers {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error de selección, error: " + e.toString());
         }
+    }
+    //Method to generate 4 digit key
+    public String generateRandomKey() {
+        Random random = new Random();
+        int key = 1000 + random.nextInt(9000); // generates a 4 digit random number
+        return Integer.toString(key);
     }
 
     public void clearFields(JTextField IDNumber, JTextField name, JTextField age, JTextField telephone, JTextField key) {

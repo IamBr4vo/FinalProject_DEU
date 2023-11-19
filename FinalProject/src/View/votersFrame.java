@@ -59,7 +59,7 @@ public class votersFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblVoters = new javax.swing.JTable();
         btnSalir = new javax.swing.JButton();
-        btnSortKey = new javax.swing.JButton();
+        btnGenerateKey = new javax.swing.JButton();
         lblAge = new javax.swing.JLabel();
         txt_Age = new javax.swing.JTextField();
 
@@ -154,7 +154,12 @@ public class votersFrame extends javax.swing.JFrame {
             }
         });
 
-        btnSortKey.setText("...");
+        btnGenerateKey.setText("Generar");
+        btnGenerateKey.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerateKeyActionPerformed(evt);
+            }
+        });
 
         lblAge.setText("Ingrese su edad:");
 
@@ -187,7 +192,7 @@ public class votersFrame extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(txt_clave, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnSortKey))
+                                .addComponent(btnGenerateKey))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblIdentificación)
@@ -235,7 +240,7 @@ public class votersFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblClave)
                             .addComponent(txt_clave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSortKey))
+                            .addComponent(btnGenerateKey))
                         .addGap(55, 55, 55)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblFecha)
@@ -286,6 +291,7 @@ public class votersFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_tblVotersMouseClicked
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+
         vt.addUser(txt_numero_identificacion, txt_nombre, txt_email, txt_Age, txt_telefono, txt_clave,this);
         listVoters();
     }//GEN-LAST:event_btnAgregarActionPerformed
@@ -301,6 +307,11 @@ public class votersFrame extends javax.swing.JFrame {
         listVoters();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    private void btnGenerateKeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateKeyActionPerformed
+        String randomKey = vt.generateRandomKey();
+        txt_clave.setText(randomKey);
+    }//GEN-LAST:event_btnGenerateKeyActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -309,9 +320,9 @@ public class votersFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnGenerateKey;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton btnSortKey;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAge;
