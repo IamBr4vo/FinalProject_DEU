@@ -89,4 +89,9 @@ public class CtrlPeriods {
         finishDate.setText("");
         status.setText("");
     }
+    public Date[] getActivePeriodDates() {
+        PeriodsDAO periodsDAO = new PeriodsDAO();
+        return periodsDAO.getActivePeriodDates();
+    }
 }
+

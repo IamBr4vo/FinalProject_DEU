@@ -4,7 +4,10 @@
  */
 package View;
 
+import Controller.CtrlPeriods;
 import Controller.CtrlUsers;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -12,6 +15,7 @@ import Controller.CtrlUsers;
  */
 public class votersFrame extends javax.swing.JFrame {
     CtrlUsers vt = new CtrlUsers();
+    CtrlPeriods ctrlPeriods = new CtrlPeriods();
 
     /**
      * Creates new form Votantes
@@ -20,7 +24,24 @@ public class votersFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.listVoters();
-        
+         // Get active dates directly in the constructor
+    Date[] activePeriodDates = ctrlPeriods.getActivePeriodDates();
+
+    // Check if there are active dates and show them in the txt
+    if (activePeriodDates != null && activePeriodDates.length == 2) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        //Check if dates are not null before formatting them
+        if (activePeriodDates[0] != null && activePeriodDates[1] != null) {
+            String startDateStr = dateFormat.format(activePeriodDates[0]);
+            String finishDateStr = dateFormat.format(activePeriodDates[1]);
+            txt_fecha_limite.setText("Inicio: " + startDateStr + ", Fin: " + finishDateStr);
+        } else {
+            txt_fecha_limite.setText("No hay período activo");
+        }
+    } else {
+        txt_fecha_limite.setText("No hay período activo");
+        }    
     }
     
     public void listVoters(){

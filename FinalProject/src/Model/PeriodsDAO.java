@@ -42,9 +42,10 @@ public class PeriodsDAO {
         DBConnection db = new DBConnection();
         List<Periods> periods = new ArrayList<>();
         String sql = "SELECT * FROM periods";
+        String activePeriodsSQL = "SELECT * FROM periods WHERE status = 'Activo'";
 
         try {
-            PreparedStatement ps = db.getConnection().prepareStatement(sql);
+            PreparedStatement ps = db.getConnection().prepareStatement(activePeriodsSQL);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
@@ -98,5 +99,28 @@ public class PeriodsDAO {
         } finally {
             db.disconnect();
         }
+    }
+     // Method to obtain active dates
+    public Date[] getActivePeriodDates() {
+        DBConnection db = new DBConnection();
+        Date[] activeDates = new Date[2]; // Array to store start and end dates
+
+        String activePeriodsSQL = "SELECT start_date, finish_date FROM periods WHERE status = 'Activo'";
+
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(activePeriodsSQL);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                activeDates[0] = resultSet.getDate("start_date");
+                activeDates[1] = resultSet.getDate("finish_date");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e.getMessage());
+        } finally {
+            db.disconnect();
+        }
+
+        return activeDates;
     }
 }
