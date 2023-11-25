@@ -92,6 +92,7 @@ public class CandidatesPanel extends javax.swing.JPanel {
 
     private void btnVotarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVotarActionPerformed
         if (parent != null) {
+            
         }
     }//GEN-LAST:event_btnVotarActionPerformed
 

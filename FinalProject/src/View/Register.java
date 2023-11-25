@@ -82,6 +82,11 @@ CtrlUsers cu = new CtrlUsers();
         });
 
         btnSortKey.setText("...");
+        btnSortKey.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSortKeyActionPerformed(evt);
+            }
+        });
 
         lblAge.setText("Ingrese su edad:");
 
@@ -187,6 +192,10 @@ CtrlUsers cu = new CtrlUsers();
         cu.setRolId(2);
         cu.addUser(txt_numero_identificacion, txt_nombre, txt_email, txt_Age, txt_telefono, txt_clave,this);
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnSortKeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortKeyActionPerformed
+
+    }//GEN-LAST:event_btnSortKeyActionPerformed
 
     /**
      * @param args the command line arguments

@@ -93,5 +93,27 @@ public class CtrlPeriods {
         PeriodsDAO periodsDAO = new PeriodsDAO();
         return periodsDAO.getActivePeriodDates();
     }
+    
+    public Date[] getActivePeriods(JTextField fechaLimite){
+        // Get active dates directly in the constructor
+        Date[] activePeriodDates = getActivePeriodDates();
+
+        // Check if there are active dates and show them in the txt
+        if (activePeriodDates != null && activePeriodDates.length == 2) {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+            //Check if dates are not null before formatting them
+            if (activePeriodDates[0] != null && activePeriodDates[1] != null) {
+                String startDateStr = dateFormat.format(activePeriodDates[0]);
+                String finishDateStr = dateFormat.format(activePeriodDates[1]);
+                fechaLimite.setText("Inicio: " + startDateStr + ", Fin: " + finishDateStr);
+            } else {
+                fechaLimite.setText("No hay período activo");
+            }
+        } else {
+            fechaLimite.setText("No hay período activo");
+        }
+        return activePeriodDates;
+    }
 }
 
