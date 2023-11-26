@@ -21,7 +21,7 @@ public class login {
     UsersDAO dao = new UsersDAO();
     CtrlUsers userCtrl = new CtrlUsers();
 
-    public void login(String email, int key) {
+    public void login(String idNumber) {
         //read the User list
         List<Users> userList = dao.read();
         //determines whether the user has been successfully authenticated or not.
@@ -29,7 +29,7 @@ public class login {
 
         for (Users user : userList) {
             //validates if the email and key are the same as the entered data registered in the database
-            if (user.getEmail().equals(email) && user.getKey() == key) {
+            if (user.getId_number().equals(idNumber)) {
                 authenticatedUser = user;
                 isAuthenticated = true;
                 break;
@@ -40,7 +40,7 @@ public class login {
         if (isAuthenticated) {
             openFrame();
         } else {
-            JOptionPane.showMessageDialog(null, "Correo o clave incorrectos", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de cédula incorrecto", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
         }
     }
 

@@ -40,12 +40,9 @@ public class Login extends javax.swing.JFrame {
         lblTitle = new javax.swing.JLabel();
         lblCity = new javax.swing.JLabel();
         lblLogin = new javax.swing.JLabel();
-        lblPassword = new javax.swing.JLabel();
-        spPassword = new javax.swing.JSeparator();
         lblUser = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         spUser = new javax.swing.JSeparator();
-        psPassword = new javax.swing.JPasswordField();
         pnButtonEnter = new javax.swing.JPanel();
         btnButtonEnter = new javax.swing.JLabel();
         pnBar = new javax.swing.JPanel();
@@ -73,16 +70,11 @@ public class Login extends javax.swing.JFrame {
 
         lblLogin.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblLogin.setText("INICIAR SESIÓN");
-        PNMain.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, 40));
-
-        lblPassword.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        lblPassword.setText("Contraseña");
-        PNMain.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 110, 30));
-        PNMain.add(spPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 440, 20));
+        PNMain.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 40));
 
         lblUser.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblUser.setText("USUARIO");
-        PNMain.add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 90, 30));
+        PNMain.add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 90, 30));
 
         txtUser.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         txtUser.setForeground(new java.awt.Color(204, 204, 204));
@@ -98,19 +90,8 @@ public class Login extends javax.swing.JFrame {
                 txtUserActionPerformed(evt);
             }
         });
-        PNMain.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 430, 30));
-        PNMain.add(spUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 440, 10));
-
-        psPassword.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        psPassword.setForeground(new java.awt.Color(204, 204, 204));
-        psPassword.setText("********");
-        psPassword.setBorder(null);
-        psPassword.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                psPasswordMousePressed(evt);
-            }
-        });
-        PNMain.add(psPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 440, 30));
+        PNMain.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 430, 30));
+        PNMain.add(spUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 440, 10));
 
         pnButtonEnter.setBackground(new java.awt.Color(0, 134, 190));
 
@@ -302,17 +283,6 @@ public class Login extends javax.swing.JFrame {
         regis.setVisible(true);
     }//GEN-LAST:event_btnButtonRegisterMouseClicked
 
-    private void psPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_psPasswordMousePressed
-        if (String.valueOf(psPassword.getPassword()).equals("********")) {
-            psPassword.setText("");
-            psPassword.setForeground(Color.BLACK);
-        }
-        if (txtUser.getText().isEmpty()) {
-            txtUser.setText("Ingrese su numero de cedula");
-            txtUser.setForeground(Color.GRAY);
-        }
-    }//GEN-LAST:event_psPasswordMousePressed
-
     private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
 
     }//GEN-LAST:event_txtUserActionPerformed
@@ -322,17 +292,12 @@ public class Login extends javax.swing.JFrame {
             txtUser.setText("");
             txtUser.setForeground(Color.BLACK);
         }
-        if (String.valueOf(psPassword.getPassword()).isEmpty()) {
-            psPassword.setText("********");
-            psPassword.setForeground(Color.GRAY);
-        }
     }//GEN-LAST:event_txtUserMousePressed
 
     private void btnButtonEnterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonEnterMouseClicked
 
-        String email = txtUser.getText();
-        int key = Integer.parseInt(psPassword.getText());
-        this.log.login(email, key);
+        String idNumber = txtUser.getText();
+        this.log.login(idNumber);
     }//GEN-LAST:event_btnButtonEnterMouseClicked
 
     private void btnButtonEnterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonEnterMouseEntered
@@ -350,15 +315,12 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblExit;
     private javax.swing.JLabel lblLogin;
-    private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUser;
     private javax.swing.JPanel pnBar;
     private javax.swing.JPanel pnButtonEnter;
     private javax.swing.JPanel pnButtonExit;
     private javax.swing.JPanel pnButtonRegister;
-    private javax.swing.JPasswordField psPassword;
-    private javax.swing.JSeparator spPassword;
     private javax.swing.JSeparator spUser;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
