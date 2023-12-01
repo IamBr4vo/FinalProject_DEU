@@ -3,17 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Model;
+
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author Bravo
  */
 public class CandidatesDAO {
+
     // Method to create a new candidate
     public void create(Candidates candidate) {
         DBConnection db = new DBConnection();
@@ -92,5 +95,44 @@ public class CandidatesDAO {
         } finally {
             db.disconnect();
         }
+    }
+
+    public void registVote(int idVotante, int idCandidato, int periodId) {
+        DBConnection db = new DBConnection();
+        String query = "INSERT INTO results (voter_id, candidate_id, period_id) VALUES (?, ?, ?)";
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(query);
+            ps.setInt(1, idVotante);
+            ps.setInt(2, idCandidato);
+            ps.setInt(3, periodId);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean haVotadoEnPeriodo(int idVoter, int periodId) {
+        DBConnection db = new DBConnection();
+        boolean hasVoted = false;
+
+        String checkVoteSQL = "SELECT COUNT(*) AS count FROM results WHERE voter_id = ? AND period_id = ?";
+
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(checkVoteSQL);
+            ps.setInt(1, idVoter);
+            ps.setInt(2, periodId);
+
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                int count = resultSet.getInt("count");
+                hasVoted = (count > 0);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e.getMessage());
+        } finally {
+            db.disconnect();
+        }
+
+        return hasVoted;
     }
 }

@@ -20,7 +20,7 @@ public class ListCandidates extends javax.swing.JPanel {
 
     private void imprintCandidates() {
         JPanel panel;
-        setLayout(new GridLayout(0, 3, 8, 8));
+        setLayout(new GridLayout(0, 3, 4 ,4));
 
         for (int i = 0; i < candidate.size(); i++) {
             Candidates candidates = candidate.get(i);

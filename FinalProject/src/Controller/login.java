@@ -20,12 +20,12 @@ public class login {
     Users authenticatedUser = null;
     UsersDAO dao = new UsersDAO();
     CtrlUsers userCtrl = new CtrlUsers();
+    //determines whether the user has been successfully authenticated or not.
+    boolean isAuthenticated = false;
 
     public void login(String idNumber) {
         //read the User list
         List<Users> userList = dao.read();
-        //determines whether the user has been successfully authenticated or not.
-        boolean isAuthenticated = false;
 
         for (Users user : userList) {
             //validates if the email and key are the same as the entered data registered in the database
@@ -58,14 +58,17 @@ public class login {
     }
 
     private void openAdminFrame() {
-        userCtrl.setRolId(2);
         Interface login = new Interface();
         login.setVisible(true);
     }
 
     private void openUserFrame() {
         userCtrl.setRolId(2);
-        votesFrame login = new votesFrame();
+        votesFrame login = new votesFrame(authenticatedUser.getId());
         login.setVisible(true);
+    }
+
+    public boolean getIsAuthenticated() {
+        return isAuthenticated;
     }
 }

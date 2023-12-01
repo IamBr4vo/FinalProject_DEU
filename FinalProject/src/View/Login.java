@@ -50,6 +50,7 @@ public class Login extends javax.swing.JFrame {
         lblExit = new javax.swing.JLabel();
         pnButtonRegister = new javax.swing.JPanel();
         btnButtonRegister = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -74,7 +75,7 @@ public class Login extends javax.swing.JFrame {
 
         lblUser.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblUser.setText("USUARIO");
-        PNMain.add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 90, 30));
+        PNMain.add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 90, 30));
 
         txtUser.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         txtUser.setForeground(new java.awt.Color(204, 204, 204));
@@ -90,7 +91,7 @@ public class Login extends javax.swing.JFrame {
                 txtUserActionPerformed(evt);
             }
         });
-        PNMain.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 430, 30));
+        PNMain.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 430, 30));
         PNMain.add(spUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 440, 10));
 
         pnButtonEnter.setBackground(new java.awt.Color(0, 134, 190));
@@ -220,12 +221,14 @@ public class Login extends javax.swing.JFrame {
         );
         pnButtonRegisterLayout.setVerticalGroup(
             pnButtonRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnButtonRegisterLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnButtonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(btnButtonRegister, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        PNMain.add(pnButtonRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, -1, -1));
+        PNMain.add(pnButtonRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, -1, 50));
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setText("No tienes una cuenta?");
+        PNMain.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -295,9 +298,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUserMousePressed
 
     private void btnButtonEnterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonEnterMouseClicked
-
         String idNumber = txtUser.getText();
         this.log.login(idNumber);
+        if(log.getIsAuthenticated() == true){
+            this.dispose();
+        }
     }//GEN-LAST:event_btnButtonEnterMouseClicked
 
     private void btnButtonEnterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnButtonEnterMouseEntered
@@ -312,6 +317,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel PNMain;
     private javax.swing.JLabel btnButtonEnter;
     private javax.swing.JLabel btnButtonRegister;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblExit;
     private javax.swing.JLabel lblLogin;

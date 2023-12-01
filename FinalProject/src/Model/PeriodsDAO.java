@@ -123,4 +123,25 @@ public class PeriodsDAO {
 
         return activeDates;
     }
+    public int getIdActivePeriod() {
+        DBConnection db = new DBConnection();
+        int id = 0;
+
+        String activePeriodsSQL = "SELECT id FROM periods WHERE status = 'Activo'";
+
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(activePeriodsSQL);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                id = resultSet.getInt("id");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e.getMessage());
+        } finally {
+            db.disconnect();
+        }
+
+        return id;
+    }
 }

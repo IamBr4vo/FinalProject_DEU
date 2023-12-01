@@ -39,7 +39,7 @@
                           <Component id="lblIdNumber" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
                           <Component id="btnVotar" alignment="0" min="-2" pref="66" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="99" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>

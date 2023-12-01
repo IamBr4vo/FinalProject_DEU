@@ -39,7 +39,14 @@ public class CtrlUsers {
         }
     }
 
-    public void addUser(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key, JFrame currentFrame) {
+    public void addUserForAdmin(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key) {
+        try {
+            this.dao.create(new Users(IDNumber.getText(), name.getText(), email.getText(), Integer.parseInt(age.getText()), Integer.parseInt(telephone.getText()), Integer.parseInt(key.getText()), rolId));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al agregar el usuario: " + e.toString());
+        }
+    }
+    public void addUserForVoters(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key, JFrame currentFrame) {
         try {
             this.dao.create(new Users(IDNumber.getText(), name.getText(), email.getText(), Integer.parseInt(age.getText()), Integer.parseInt(telephone.getText()), Integer.parseInt(key.getText()), rolId));
             if (rolId == 2) {

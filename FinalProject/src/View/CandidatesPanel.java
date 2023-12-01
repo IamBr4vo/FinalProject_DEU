@@ -1,6 +1,9 @@
 package View;
 
 import Model.*;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class CandidatesPanel extends javax.swing.JPanel {
 
@@ -17,7 +20,18 @@ public class CandidatesPanel extends javax.swing.JPanel {
         try {
             lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource(candidate.getImage())));
         } catch (Exception e) {
-            System.out.println(candidate.getImage());
+            try {
+                File imageFile = new File(candidate.getImage());
+
+                if (imageFile.exists() && !imageFile.isDirectory()) {
+                    ImageIcon imageIcon = new ImageIcon(candidate.getImage());
+                    lblImage.setIcon(imageIcon);
+                } else {
+                    System.out.println("Error al cargar la imagen: " + candidate.getImage());
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
 
         this.parent = parent;
@@ -71,7 +85,7 @@ public class CandidatesPanel extends javax.swing.JPanel {
                             .addComponent(lblImage)
                             .addComponent(lblIdNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnVotar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(99, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,7 +106,16 @@ public class CandidatesPanel extends javax.swing.JPanel {
 
     private void btnVotarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVotarActionPerformed
         if (parent != null) {
-            
+            int idVotante = parent.getIdVotante();
+            int idCandidato = candidate.getId();
+            CandidatesDAO candidateDAO = new CandidatesDAO();
+            PeriodsDAO periodsDAO = new PeriodsDAO();
+            int periodId = periodsDAO.getIdActivePeriod();
+            if (!candidateDAO.haVotadoEnPeriodo(idVotante, periodId)) {
+                candidateDAO.registVote(idVotante, idCandidato, periodId);
+            } else {
+                JOptionPane.showMessageDialog(null, "Ya ha votado en este periodo.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_btnVotarActionPerformed
 
