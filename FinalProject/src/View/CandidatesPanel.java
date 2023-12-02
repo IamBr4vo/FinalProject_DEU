@@ -105,6 +105,7 @@ public class CandidatesPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVotarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVotarActionPerformed
+
         if (parent != null) {
             int idVotante = parent.getIdVotante();
             int idCandidato = candidate.getId();
@@ -112,7 +113,15 @@ public class CandidatesPanel extends javax.swing.JPanel {
             PeriodsDAO periodsDAO = new PeriodsDAO();
             int periodId = periodsDAO.getIdActivePeriod();
             if (!candidateDAO.haVotadoEnPeriodo(idVotante, periodId)) {
-                candidateDAO.registVote(idVotante, idCandidato, periodId);
+                int i = JOptionPane.showConfirmDialog(null, "¿Estas seguro que quieres votar por este partido?");
+                if (i == 0) {
+                    JOptionPane.showMessageDialog(this, "Su voto a sido registrado");
+                    candidateDAO.registVote(idVotante, idCandidato, periodId);
+                } else if (i == 1) {
+                    JOptionPane.showMessageDialog(this, "Su voto no fue registrado");
+                } else {
+                    JOptionPane.showMessageDialog(this, "Se canceló correctamente");
+                }
             } else {
                 JOptionPane.showMessageDialog(null, "Ya ha votado en este periodo.", "Error", JOptionPane.ERROR_MESSAGE);
             }
