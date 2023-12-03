@@ -60,13 +60,13 @@ public class Login extends javax.swing.JFrame {
         PNMain.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PNMain.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblTitle.setBackground(new java.awt.Color(255, 255, 255));
         lblTitle.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Sistema de Votación Electrónica");
-        PNMain.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 390, -1));
+        PNMain.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 390, -1));
 
-        lblCity.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Catarata.gif"))); // NOI18N
+        lblCity.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/BanderaVertical.gif"))); // NOI18N
         PNMain.add(lblCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 410, 510));
 
         lblLogin.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N

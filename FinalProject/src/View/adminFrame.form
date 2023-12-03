@@ -88,7 +88,7 @@
                               <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="117" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -381,12 +381,12 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace pref="29" max="32767" attributes="0"/>
-                          <Component id="btnAddVoter" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnUpdateVoter" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnDeleteVoter" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="btnAddVoter" min="-2" pref="49" max="-2" attributes="0"/>
+                          <EmptySpace pref="32" max="32767" attributes="0"/>
+                          <Component id="btnUpdateVoter" min="-2" pref="49" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="btnDeleteVoter" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -395,12 +395,12 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnDeleteVoter" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnUpdateVoter" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnAddVoter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnAddVoter" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnUpdateVoter" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnDeleteVoter" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="20" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -408,7 +408,9 @@
               <SubComponents>
                 <Component class="javax.swing.JButton" name="btnAddVoter">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Agregar"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/View/Images/AgregarUsuario.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddVoterActionPerformed"/>
@@ -416,7 +418,15 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnUpdateVoter">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Modificar"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/View/Images/Editar.png"/>
+                    </Property>
+                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[72, 23]"/>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[72, 23]"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateVoterActionPerformed"/>
@@ -424,7 +434,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnDeleteVoter">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Eliminar"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/View/Images/Eliminar.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteVoterActionPerformed"/>
@@ -612,11 +624,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnAddPeriods" min="-2" pref="81" max="-2" attributes="0"/>
+                          <Component id="btnAddPeriods" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnUpdatePeriods" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnUpdatePeriods" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnDeletePeriods" min="-2" pref="81" max="-2" attributes="0"/>
+                          <Component id="btnDeletePeriods" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -626,9 +638,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnAddPeriods" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnUpdatePeriods" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnDeletePeriods" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAddPeriods" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="btnUpdatePeriods" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="btnDeletePeriods" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="20" max="32767" attributes="0"/>
                       </Group>
@@ -638,7 +650,9 @@
               <SubComponents>
                 <Component class="javax.swing.JButton" name="btnAddPeriods">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Agregar"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/View/Images/AgregarPeriodo.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddPeriodsActionPerformed"/>
@@ -646,7 +660,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnUpdatePeriods">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Actualizar"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/View/Images/Editar.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdatePeriodsActionPerformed"/>
@@ -654,7 +670,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnDeletePeriods">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Eliminar"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/View/Images/Eliminar.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeletePeriodsActionPerformed"/>
@@ -868,11 +886,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnAddCandidate" min="-2" pref="83" max="-2" attributes="0"/>
+                          <Component id="btnAddCandidate" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="btnUpdateCandidate" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnUpdateCandidate" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnDeleteCandidate" min="-2" pref="83" max="-2" attributes="0"/>
+                          <Component id="btnDeleteCandidate" min="-2" pref="49" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -882,9 +900,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnAddCandidate" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnUpdateCandidate" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnDeleteCandidate" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAddCandidate" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="btnUpdateCandidate" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="btnDeleteCandidate" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="19" max="32767" attributes="0"/>
                       </Group>
@@ -894,7 +912,9 @@
               <SubComponents>
                 <Component class="javax.swing.JButton" name="btnAddCandidate">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Agregar"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/View/Images/AgregarUsuario.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddCandidateActionPerformed"/>
@@ -902,7 +922,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnUpdateCandidate">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Actualizar"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/View/Images/Editar.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateCandidateActionPerformed"/>
@@ -910,7 +932,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnDeleteCandidate">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Eliminar"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/View/Images/Eliminar.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteCandidateActionPerformed"/>

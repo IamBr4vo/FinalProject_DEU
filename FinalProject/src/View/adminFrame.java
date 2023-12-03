@@ -281,21 +281,23 @@ public class adminFrame extends javax.swing.JFrame {
 
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Acciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14))); // NOI18N
 
-        btnAddVoter.setText("Agregar");
+        btnAddVoter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/AgregarUsuario.png"))); // NOI18N
         btnAddVoter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddVoterActionPerformed(evt);
             }
         });
 
-        btnUpdateVoter.setText("Modificar");
+        btnUpdateVoter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Editar.png"))); // NOI18N
+        btnUpdateVoter.setMaximumSize(new java.awt.Dimension(72, 23));
+        btnUpdateVoter.setMinimumSize(new java.awt.Dimension(72, 23));
         btnUpdateVoter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateVoterActionPerformed(evt);
             }
         });
 
-        btnDeleteVoter.setText("Eliminar");
+        btnDeleteVoter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Eliminar.png"))); // NOI18N
         btnDeleteVoter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteVoterActionPerformed(evt);
@@ -307,23 +309,23 @@ public class adminFrame extends javax.swing.JFrame {
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
-                .addComponent(btnAddVoter)
-                .addGap(18, 18, 18)
-                .addComponent(btnUpdateVoter)
-                .addGap(18, 18, 18)
-                .addComponent(btnDeleteVoter)
+                .addGap(28, 28, 28)
+                .addComponent(btnAddVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(btnUpdateVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(btnDeleteVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDeleteVoter)
-                    .addComponent(btnUpdateVoter)
-                    .addComponent(btnAddVoter))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAddVoter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnUpdateVoter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDeleteVoter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -351,7 +353,7 @@ public class adminFrame extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Agregar votantes", jPanel3);
@@ -423,21 +425,21 @@ public class adminFrame extends javax.swing.JFrame {
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Acciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14))); // NOI18N
 
-        btnAddPeriods.setText("Agregar");
+        btnAddPeriods.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/AgregarPeriodo.png"))); // NOI18N
         btnAddPeriods.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddPeriodsActionPerformed(evt);
             }
         });
 
-        btnUpdatePeriods.setText("Actualizar");
+        btnUpdatePeriods.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Editar.png"))); // NOI18N
         btnUpdatePeriods.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdatePeriodsActionPerformed(evt);
             }
         });
 
-        btnDeletePeriods.setText("Eliminar");
+        btnDeletePeriods.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Eliminar.png"))); // NOI18N
         btnDeletePeriods.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeletePeriodsActionPerformed(evt);
@@ -450,11 +452,11 @@ public class adminFrame extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAddPeriods, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAddPeriods, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnUpdatePeriods)
+                .addComponent(btnUpdatePeriods, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnDeletePeriods, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnDeletePeriods, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -462,9 +464,9 @@ public class adminFrame extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddPeriods)
-                    .addComponent(btnUpdatePeriods)
-                    .addComponent(btnDeletePeriods))
+                    .addComponent(btnAddPeriods, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUpdatePeriods, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDeletePeriods, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -581,21 +583,21 @@ public class adminFrame extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Acciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14))); // NOI18N
 
-        btnAddCandidate.setText("Agregar");
+        btnAddCandidate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/AgregarUsuario.png"))); // NOI18N
         btnAddCandidate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddCandidateActionPerformed(evt);
             }
         });
 
-        btnUpdateCandidate.setText("Actualizar");
+        btnUpdateCandidate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Editar.png"))); // NOI18N
         btnUpdateCandidate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateCandidateActionPerformed(evt);
             }
         });
 
-        btnDeleteCandidate.setText("Eliminar");
+        btnDeleteCandidate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Eliminar.png"))); // NOI18N
         btnDeleteCandidate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteCandidateActionPerformed(evt);
@@ -608,11 +610,11 @@ public class adminFrame extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAddCandidate, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAddCandidate, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
-                .addComponent(btnUpdateCandidate)
+                .addComponent(btnUpdateCandidate, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnDeleteCandidate, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnDeleteCandidate, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 8, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -620,9 +622,9 @@ public class adminFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddCandidate)
-                    .addComponent(btnUpdateCandidate)
-                    .addComponent(btnDeleteCandidate))
+                    .addComponent(btnAddCandidate, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUpdateCandidate, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDeleteCandidate, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -788,7 +790,7 @@ public class adminFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_tblPeriodsMouseClicked
 
     private void lblExit5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExit5MouseClicked
-        Interface i = new Interface();
+        dashboard i = new dashboard();
         i.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lblExit5MouseClicked

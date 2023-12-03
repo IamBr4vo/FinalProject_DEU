@@ -4,11 +4,13 @@
  */
 package Controller;
 
+import Model.CandidatesDAO;
+import Model.PeriodsDAO;
 import java.util.List;
 import javax.swing.JOptionPane;
 import Model.Users;
 import Model.UsersDAO;
-import View.Interface;
+import View.dashboard;
 import View.votesFrame;
 
 /**
@@ -35,12 +37,19 @@ public class login {
                 break;
             }
         }
-
-        //Displays the frame if the user has been authenticated.
-        if (isAuthenticated) {
-            openFrame();
+        int idVotante = authenticatedUser.getId();
+        CandidatesDAO candidateDAO = new CandidatesDAO();
+        PeriodsDAO periodsDAO = new PeriodsDAO();
+        int periodId = periodsDAO.getIdActivePeriod();
+        if (!candidateDAO.haVotadoEnPeriodo(idVotante, periodId)) {
+            //Displays the frame if the user has been authenticated.
+            if (isAuthenticated) {
+                openFrame();
+            } else {
+                JOptionPane.showMessageDialog(null, "Número de cédula incorrecto", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
+            }
         } else {
-            JOptionPane.showMessageDialog(null, "Número de cédula incorrecto", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Ya ha votado en este periodo.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -58,7 +67,7 @@ public class login {
     }
 
     private void openAdminFrame() {
-        Interface login = new Interface();
+        dashboard login = new dashboard();
         login.setVisible(true);
         userCtrl.setRolId(2);
     }

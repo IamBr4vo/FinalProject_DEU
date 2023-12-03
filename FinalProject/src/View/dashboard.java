@@ -33,12 +33,14 @@ public class dashboard extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        lblVerResultados = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        lblResultados = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -71,26 +73,36 @@ public class dashboard extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(54, 70, 78));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Administrador.png"))); // NOI18N
-        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 40));
+        lblVerResultados.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        lblVerResultados.setForeground(new java.awt.Color(255, 255, 255));
+        lblVerResultados.setText("Ver resultados");
+        lblVerResultados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblVerResultadosMouseClicked(evt);
+            }
+        });
+        jPanel4.add(lblVerResultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, 20));
 
-        jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Ver resultados");
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, 20));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Grafico.png"))); // NOI18N
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 40));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 210, 40));
 
         jPanel5.setBackground(new java.awt.Color(54, 70, 78));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Grafico.png"))); // NOI18N
-        jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 40));
+        lblResultados.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        lblResultados.setForeground(new java.awt.Color(255, 255, 255));
+        lblResultados.setText("Administrador");
+        lblResultados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblResultadosMouseClicked(evt);
+            }
+        });
+        jPanel5.add(lblResultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, 20));
 
-        jLabel7.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Ver resultados");
-        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, 20));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Administrador.png"))); // NOI18N
+        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 40));
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 210, 40));
 
@@ -98,15 +110,36 @@ public class dashboard extends javax.swing.JFrame {
 
         jPanel3.setOpaque(false);
 
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Salida.png"))); // NOI18N
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Images/Votos.GIF"))); // NOI18N
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 790, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(256, 256, 256)
+                .addComponent(jLabel5)
+                .addContainerGap(342, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 552, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(244, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 73, 790, 552));
@@ -141,12 +174,12 @@ public class dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     int x = 210;
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        if ( x == 210 ){
-            jPanel2.setSize (210, 552);
-            Thread th = new Thread(){
-                public void run(){
+        if (x == 210) {
+            jPanel2.setSize(210, 552);
+            Thread th = new Thread() {
+                public void run() {
                     try {
-                        for ( int i = 210; i >= 0; i--){
+                        for (int i = 210; i >= 0; i--) {
                             Thread.sleep(1);
                             jPanel2.setSize(i, 552);
                         }
@@ -154,19 +187,20 @@ public class dashboard extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, e);
                     }
                 }
-            };th.start();
-            x=0;
+            };
+            th.start();
+            x = 0;
         }
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        if( x == 0){
+        if (x == 0) {
             jPanel2.show();
             jPanel2.setSize(x, 552);
-            Thread th = new Thread(){
-                public void run(){
-                    try{
-                        for (int i = 0; i <= x; i++){
+            Thread th = new Thread() {
+                public void run() {
+                    try {
+                        for (int i = 0; i <= x; i++) {
                             Thread.sleep(1);
                             jPanel2.setSize(i, 552);
                         }
@@ -174,7 +208,8 @@ public class dashboard extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, e);
                     }
                 }
-            };th.start();
+            };
+            th.start();
             x = 210;
         }
     }//GEN-LAST:event_jLabel3MouseClicked
@@ -186,6 +221,24 @@ public class dashboard extends javax.swing.JFrame {
     private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
         resetlabelcolor(jLabel2);
     }//GEN-LAST:event_jLabel2MouseExited
+
+    private void lblResultadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResultadosMouseClicked
+        adminFrame admin = new adminFrame();
+        admin.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblResultadosMouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        Login login = new Login();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void lblVerResultadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVerResultadosMouseClicked
+        resultsFrame ventanaSecundaria = new resultsFrame();
+        ventanaSecundaria.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblVerResultadosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -235,12 +288,14 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel lblResultados;
+    private javax.swing.JLabel lblVerResultados;
     // End of variables declaration//GEN-END:variables
-private void labelcolor (JLabel label){
-    label.setBackground(new java.awt.Color(53,162,107));
-}
-    private void resetlabelcolor (JLabel label){
-    label.setBackground(new java.awt.Color(54,70,78));
+private void labelcolor(JLabel label) {
+        label.setBackground(new java.awt.Color(53, 162, 107));
     }
-} 
-    
+
+    private void resetlabelcolor(JLabel label) {
+        label.setBackground(new java.awt.Color(54, 70, 78));
+    }
+}
