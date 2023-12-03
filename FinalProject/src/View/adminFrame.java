@@ -32,7 +32,7 @@ public class adminFrame extends javax.swing.JFrame {
         this.listCandidates();
         this.listVoters();
         generateKey();
-        this.pr.getActivePeriods(txt_fecha_limite);
+        this.pr.getActivePeriods(txtLimitDatePeriod);
     }
 
     public void listPeriods() {
@@ -40,7 +40,7 @@ public class adminFrame extends javax.swing.JFrame {
     }
 
     public void clearFiledsPeriods() {
-        pr.addPeriod(txt_start_date, txt_finish_date, txt_status);
+        pr.addPeriod(txtStartDatePeriods, txtFinishDatePeriods, txtStatusPeriod);
     }
 
     public void listVoters() {
@@ -48,12 +48,12 @@ public class adminFrame extends javax.swing.JFrame {
     }
 
     public void clearFiledsVoters() {
-        vt.clearFields(txt_numero_identificacion, txt_nombre, txt_email, txt_telefono, txt_clave);
+        vt.clearFields(txtIdNumberVoter, txtNameVoter, txtAgeVoter, txtEmailVoter, txtTelephoneVoter, txtKey);
     }
 
     public void generateKey() {
         String randomKey = vt.generateRandomKey();
-        txt_clave.setText(randomKey);
+        txtKey.setText(randomKey);
     }
 
     public void listCandidates() {
@@ -61,7 +61,7 @@ public class adminFrame extends javax.swing.JFrame {
     }
 
     public void clearFiledsCandidates() {
-        cc.clearFields(txt_numero_identificacion, txt_nombre, txt_partido_politico, txt_imagen);
+        cc.clearFields(txtIdNumberCandidate, txtNameCandidate, txtPoliticParty, txtImage);
     }
 
     /**
@@ -78,20 +78,20 @@ public class adminFrame extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tblVoters = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
-        txt_numero_identificacion2 = new javax.swing.JTextField();
+        txtIdNumberVoter = new javax.swing.JTextField();
         lblIdentificación2 = new javax.swing.JLabel();
-        txt_nombre2 = new javax.swing.JTextField();
+        txtNameVoter = new javax.swing.JTextField();
         lblNombre2 = new javax.swing.JLabel();
-        txt_email = new javax.swing.JTextField();
+        txtEmailVoter = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
-        txt_telefono = new javax.swing.JTextField();
+        txtTelephoneVoter = new javax.swing.JTextField();
         lblRuta2 = new javax.swing.JLabel();
         lblAge = new javax.swing.JLabel();
-        txt_Age = new javax.swing.JTextField();
+        txtAgeVoter = new javax.swing.JTextField();
         lblClave = new javax.swing.JLabel();
-        txt_clave = new javax.swing.JTextField();
+        txtKey = new javax.swing.JTextField();
         lblFecha = new javax.swing.JLabel();
-        txt_fecha_limite = new javax.swing.JTextField();
+        txtLimitDatePeriod = new javax.swing.JTextField();
         btnGenerateKey = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         btnAddVoter = new javax.swing.JButton();
@@ -101,11 +101,11 @@ public class adminFrame extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         tblPeriods = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
-        txt_start_date = new javax.swing.JTextField();
+        txtStartDatePeriods = new javax.swing.JTextField();
         lblStart_date = new javax.swing.JLabel();
-        txt_finish_date = new javax.swing.JTextField();
+        txtFinishDatePeriods = new javax.swing.JTextField();
         lblFinish_date = new javax.swing.JLabel();
-        txt_status = new javax.swing.JTextField();
+        txtStatusPeriod = new javax.swing.JTextField();
         lblStatus = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         btnAddPeriods = new javax.swing.JButton();
@@ -116,12 +116,12 @@ public class adminFrame extends javax.swing.JFrame {
         tblCandidate = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         lblIdentificación1 = new javax.swing.JLabel();
-        txt_numero_identificacion = new javax.swing.JTextField();
-        txt_nombre = new javax.swing.JTextField();
+        txtIdNumberCandidate = new javax.swing.JTextField();
+        txtNameCandidate = new javax.swing.JTextField();
         lblNombre1 = new javax.swing.JLabel();
         lblPartidoPolítico1 = new javax.swing.JLabel();
-        txt_partido_politico = new javax.swing.JTextField();
-        txt_imagen = new javax.swing.JTextField();
+        txtPoliticParty = new javax.swing.JTextField();
+        txtImage = new javax.swing.JTextField();
         lblRuta1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -182,19 +182,19 @@ public class adminFrame extends javax.swing.JFrame {
         lblClave.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         lblClave.setText("Clave:");
 
-        txt_clave.setEditable(false);
-        txt_clave.addActionListener(new java.awt.event.ActionListener() {
+        txtKey.setEditable(false);
+        txtKey.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_claveActionPerformed(evt);
+                txtKeyActionPerformed(evt);
             }
         });
 
-        lblFecha.setText("Votar:");
+        lblFecha.setText("Periodo Para votar:");
 
-        txt_fecha_limite.setEditable(false);
-        txt_fecha_limite.addActionListener(new java.awt.event.ActionListener() {
+        txtLimitDatePeriod.setEditable(false);
+        txtLimitDatePeriod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_fecha_limiteActionPerformed(evt);
+                txtLimitDatePeriodActionPerformed(evt);
             }
         });
 
@@ -215,31 +215,31 @@ public class adminFrame extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(lblIdentificación2)
                         .addGap(18, 18, 18)
-                        .addComponent(txt_numero_identificacion2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtIdNumberVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblFecha)
                             .addComponent(lblClave))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_clave, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_fecha_limite, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtKey, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtLimitDatePeriod, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(lblNombre2)
                         .addGap(18, 18, 18)
-                        .addComponent(txt_nombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNameVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(lblEmail)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtEmailVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(lblRuta2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtTelephoneVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(lblAge)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_Age, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtAgeVoter, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnGenerateKey)
                 .addGap(40, 40, 40))
@@ -249,32 +249,32 @@ public class adminFrame extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_numero_identificacion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdNumberVoter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblIdentificación2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_nombre2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNameVoter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNombre2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEmail)
-                    .addComponent(txt_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEmailVoter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTelephoneVoter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblRuta2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAge)
-                    .addComponent(txt_Age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAgeVoter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblClave)
-                    .addComponent(txt_clave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtKey, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGenerateKey))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_fecha_limite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLimitDatePeriod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblFecha))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
@@ -398,9 +398,9 @@ public class adminFrame extends javax.swing.JFrame {
                     .addComponent(lblStatus))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_start_date, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_finish_date, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_status, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtStartDatePeriods, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFinishDatePeriods, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtStatusPeriod, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 34, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -408,16 +408,16 @@ public class adminFrame extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_start_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtStartDatePeriods, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblStart_date))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_finish_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFinishDatePeriods, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblFinish_date))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblStatus)
-                    .addComponent(txt_status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtStatusPeriod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -548,12 +548,12 @@ public class adminFrame extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(txt_imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtImage, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1))
-                    .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_numero_identificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_partido_politico, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNameCandidate, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdNumberCandidate, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPoliticParty, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -562,18 +562,18 @@ public class adminFrame extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblIdentificación1)
-                    .addComponent(txt_numero_identificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtIdNumberCandidate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNameCandidate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNombre1))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPartidoPolítico1)
-                    .addComponent(txt_partido_politico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPoliticParty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_imagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblRuta1)
                     .addComponent(jButton1))
                 .addContainerGap(40, Short.MAX_VALUE))
@@ -712,12 +712,12 @@ public class adminFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddCandidateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCandidateActionPerformed
-        cc.addCandidate(txt_numero_identificacion, txt_nombre, txt_partido_politico, txt_imagen);
+        cc.addCandidate(txtIdNumberCandidate, txtNameCandidate, txtPoliticParty, txtImage);
         listCandidates();
     }//GEN-LAST:event_btnAddCandidateActionPerformed
 
     private void btnUpdateCandidateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateCandidateActionPerformed
-        cc.updateCandidate(txt_numero_identificacion, txt_nombre, txt_partido_politico, txt_imagen);
+        cc.updateCandidate(txtIdNumberCandidate, txtNameCandidate, txtPoliticParty, txtImage);
         listCandidates();
         clearFiledsCandidates();
     }//GEN-LAST:event_btnUpdateCandidateActionPerformed
@@ -728,28 +728,28 @@ public class adminFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteCandidateActionPerformed
 
     private void tblCandidateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCandidateMouseClicked
-        cc.selectedRow(tblCandidate, txt_numero_identificacion, txt_nombre, txt_partido_politico, txt_imagen);
+        cc.selectedRow(tblCandidate, txtIdNumberCandidate, txtNameCandidate, txtPoliticParty, txtImage);
         int selectedRow = tblCandidate.getSelectedRow();
         String imagePath = tblCandidate.getValueAt(selectedRow, 4).toString();
         mostrarImagen(imagePath);
     }//GEN-LAST:event_tblCandidateMouseClicked
 
-    private void txt_claveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_claveActionPerformed
+    private void txtKeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKeyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_claveActionPerformed
+    }//GEN-LAST:event_txtKeyActionPerformed
 
-    private void txt_fecha_limiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_fecha_limiteActionPerformed
+    private void txtLimitDatePeriodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLimitDatePeriodActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_fecha_limiteActionPerformed
+    }//GEN-LAST:event_txtLimitDatePeriodActionPerformed
 
     private void btnAddVoterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddVoterActionPerformed
 
-        vt.addUserForAdmin(txt_numero_identificacion, txt_nombre, txt_email, txt_Age, txt_telefono, txt_clave);
+        vt.addUserForAdmin(txtIdNumberVoter, txtNameVoter, txtEmailVoter, txtAgeVoter, txtTelephoneVoter, txtKey);
         listVoters();
     }//GEN-LAST:event_btnAddVoterActionPerformed
 
     private void btnUpdateVoterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateVoterActionPerformed
-        vt.updateUser(txt_numero_identificacion, txt_nombre, txt_email, txt_Age, txt_telefono, txt_clave);
+        vt.updateUser(tblVoters, txtIdNumberVoter, txtNameVoter, txtEmailVoter, txtAgeVoter, txtTelephoneVoter, txtKey);
         listVoters();
         clearFiledsVoters();
     }//GEN-LAST:event_btnUpdateVoterActionPerformed
@@ -760,7 +760,7 @@ public class adminFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteVoterActionPerformed
 
     private void tblVotersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblVotersMouseClicked
-        vt.selectedRow(tblVoters, txt_numero_identificacion, txt_nombre, txt_email, txt_Age, txt_telefono, txt_clave);
+        vt.selectedRow(tblVoters, txtIdNumberVoter, txtNameVoter, txtEmailVoter, txtAgeVoter, txtTelephoneVoter, txtKey);
     }//GEN-LAST:event_tblVotersMouseClicked
 
     private void btnGenerateKeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateKeyActionPerformed
@@ -768,12 +768,12 @@ public class adminFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGenerateKeyActionPerformed
 
     private void btnAddPeriodsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPeriodsActionPerformed
-        pr.addPeriod(txt_start_date, txt_finish_date, txt_status);
+        pr.addPeriod(txtStartDatePeriods, txtFinishDatePeriods, txtStatusPeriod);
         listPeriods();
     }//GEN-LAST:event_btnAddPeriodsActionPerformed
 
     private void btnUpdatePeriodsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdatePeriodsActionPerformed
-        pr.addPeriod(txt_start_date, txt_finish_date, txt_status);
+        pr.updatePeriod(txtStartDatePeriods, txtFinishDatePeriods, txtStatusPeriod);
         listPeriods();
         clearFiledsPeriods();
     }//GEN-LAST:event_btnUpdatePeriodsActionPerformed
@@ -784,7 +784,7 @@ public class adminFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeletePeriodsActionPerformed
 
     private void tblPeriodsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPeriodsMouseClicked
-        pr.selectedRow(tblPeriods, txt_start_date, txt_finish_date, txt_status);
+        pr.selectedRow(tblPeriods, txtStartDatePeriods, txtFinishDatePeriods, txtStatusPeriod);
     }//GEN-LAST:event_tblPeriodsMouseClicked
 
     private void lblExit5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExit5MouseClicked
@@ -811,10 +811,10 @@ public class adminFrame extends javax.swing.JFrame {
 
         if (result == JFileChooser.APPROVE_OPTION) {
             String imageName = "/View/Images/" + fileChooser.getSelectedFile().getName();
-            txt_imagen.setText(imageName);
+            txtImage.setText(imageName);
             String imagePath = fileChooser.getSelectedFile().getPath();
             if (!imagePath.startsWith("C:\\Users\\Bravo\\Documents\\FinalProject_DEU\\FinalProject\\src\\View\\Images")) {
-                txt_imagen.setText(imagePath);
+                txtImage.setText(imagePath);
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -866,11 +866,6 @@ public class adminFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblClave;
     private javax.swing.JLabel lblEmail;
-    private javax.swing.JLabel lblExit;
-    private javax.swing.JLabel lblExit1;
-    private javax.swing.JLabel lblExit2;
-    private javax.swing.JLabel lblExit3;
-    private javax.swing.JLabel lblExit4;
     private javax.swing.JLabel lblExit5;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblFinish_date;
@@ -885,27 +880,22 @@ public class adminFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblStart_date;
     private javax.swing.JLabel lblStatus;
     private javax.swing.JPanel pnBtnExit;
-    private javax.swing.JPanel pnButtonExit;
-    private javax.swing.JPanel pnButtonExit1;
-    private javax.swing.JPanel pnButtonExit2;
-    private javax.swing.JPanel pnButtonExit3;
-    private javax.swing.JPanel pnButtonExit4;
     private javax.swing.JTable tblCandidate;
     private javax.swing.JTable tblPeriods;
     private javax.swing.JTable tblVoters;
-    private javax.swing.JTextField txt_Age;
-    private javax.swing.JTextField txt_clave;
-    private javax.swing.JTextField txt_email;
-    private javax.swing.JTextField txt_fecha_limite;
-    private javax.swing.JTextField txt_finish_date;
-    private javax.swing.JTextField txt_imagen;
-    private javax.swing.JTextField txt_nombre;
-    private javax.swing.JTextField txt_nombre2;
-    private javax.swing.JTextField txt_numero_identificacion;
-    private javax.swing.JTextField txt_numero_identificacion2;
-    private javax.swing.JTextField txt_partido_politico;
-    private javax.swing.JTextField txt_start_date;
-    private javax.swing.JTextField txt_status;
-    private javax.swing.JTextField txt_telefono;
+    private javax.swing.JTextField txtAgeVoter;
+    private javax.swing.JTextField txtEmailVoter;
+    private javax.swing.JTextField txtFinishDatePeriods;
+    private javax.swing.JTextField txtIdNumberCandidate;
+    private javax.swing.JTextField txtIdNumberVoter;
+    private javax.swing.JTextField txtImage;
+    private javax.swing.JTextField txtKey;
+    private javax.swing.JTextField txtLimitDatePeriod;
+    private javax.swing.JTextField txtNameCandidate;
+    private javax.swing.JTextField txtNameVoter;
+    private javax.swing.JTextField txtPoliticParty;
+    private javax.swing.JTextField txtStartDatePeriods;
+    private javax.swing.JTextField txtStatusPeriod;
+    private javax.swing.JTextField txtTelephoneVoter;
     // End of variables declaration//GEN-END:variables
 }

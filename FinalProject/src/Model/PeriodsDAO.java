@@ -28,7 +28,7 @@ public class PeriodsDAO {
             ps.setDate(2, new java.sql.Date(periods.getFinish_date().getTime()));
             ps.setString(3, periods.getStatus());
             ps.execute();
-            JOptionPane.showMessageDialog(null, "Se insertó correctamente el estudiante");
+            JOptionPane.showMessageDialog(null, "Se insertó correctamente el periodo");
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "No Se insertó correctamente el estudiante, error: " + e.toString());
         } finally {

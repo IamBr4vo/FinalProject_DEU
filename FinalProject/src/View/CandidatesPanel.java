@@ -6,23 +6,23 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class CandidatesPanel extends javax.swing.JPanel {
-
+    
     private Candidates candidate;
     private votesFrame parent;
-
+    
     public CandidatesPanel(Candidates candidate, votesFrame parent) {
         initComponents();
         this.candidate = candidate;
         lblName.setText(candidate.getName());
         lblIdNumber.setText(candidate.getId_number());
         lblPoliticParty.setText(candidate.getPoliticParty());
-
+        
         try {
             lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource(candidate.getImage())));
         } catch (Exception e) {
             try {
                 File imageFile = new File(candidate.getImage());
-
+                
                 if (imageFile.exists() && !imageFile.isDirectory()) {
                     ImageIcon imageIcon = new ImageIcon(candidate.getImage());
                     lblImage.setIcon(imageIcon);
@@ -33,10 +33,10 @@ public class CandidatesPanel extends javax.swing.JPanel {
                 ex.printStackTrace();
             }
         }
-
+        
         this.parent = parent;
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -105,7 +105,7 @@ public class CandidatesPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVotarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVotarActionPerformed
-
+        
         if (parent != null) {
             int idVotante = parent.getIdVotante();
             int idCandidato = candidate.getId();
@@ -113,14 +113,13 @@ public class CandidatesPanel extends javax.swing.JPanel {
             PeriodsDAO periodsDAO = new PeriodsDAO();
             int periodId = periodsDAO.getIdActivePeriod();
             if (!candidateDAO.haVotadoEnPeriodo(idVotante, periodId)) {
-                int i = JOptionPane.showConfirmDialog(null, "¿Estas seguro que quieres votar por este partido?");
+                int i = JOptionPane.showConfirmDialog(null, "¿Estas seguro que quieres votar por " + candidateDAO.getNameCandidate( idCandidato));
                 if (i == 0) {
-                    JOptionPane.showMessageDialog(this, "Su voto a sido registrado");
+                    JOptionPane.showMessageDialog(null, "Su voto a sido registrado");
                     candidateDAO.registVote(idVotante, idCandidato, periodId);
+                    btnVotar.setEnabled(false);
                 } else if (i == 1) {
-                    JOptionPane.showMessageDialog(this, "Su voto no fue registrado");
-                } else {
-                    JOptionPane.showMessageDialog(this, "Se canceló correctamente");
+                    JOptionPane.showMessageDialog(null, "Su voto no fue registrado");
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Ya ha votado en este periodo.", "Error", JOptionPane.ERROR_MESSAGE);

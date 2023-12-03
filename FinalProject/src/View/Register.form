@@ -43,36 +43,48 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="lblNombre" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblIdentificación" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblEmail" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblRuta" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblAge" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblClave" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblFecha" alignment="1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnAgregar" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_nombre" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
-                      <Component id="txt_numero_identificacion" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Component id="txt_clave" min="-2" pref="181" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnSortKey" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="15" max="32767" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="txt_email" min="-2" pref="181" max="-2" attributes="0"/>
-                      <Component id="txt_telefono" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
-                      <Component id="txt_Age" min="-2" pref="181" max="-2" attributes="0"/>
-                      <Component id="txt_fecha_limite" min="-2" pref="181" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="lblNombre" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblIdentificación" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblEmail" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblRuta" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblAge" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblClave" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblFecha" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="btnAgregar" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txt_nombre" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
+                                      <Component id="txt_numero_identificacion" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="txt_clave" min="-2" pref="181" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="btnSortKey" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="txt_email" min="-2" pref="181" max="-2" attributes="0"/>
+                                      <Component id="txt_telefono" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
+                                      <Component id="txt_Age" min="-2" pref="181" max="-2" attributes="0"/>
+                                      <Component id="txt_fecha_limite" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -120,7 +132,9 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnAgregar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="37" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="7" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -234,6 +248,14 @@
             </Property>
             <Property name="text" type="java.lang.String" value=" Bienvenido/a. Por favor, ingrese los datos solicitados a continuaci&#xf3;n "/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Volver"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

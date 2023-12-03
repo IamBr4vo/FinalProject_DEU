@@ -60,6 +60,7 @@ public class login {
     private void openAdminFrame() {
         Interface login = new Interface();
         login.setVisible(true);
+        userCtrl.setRolId(2);
     }
 
     private void openUserFrame() {

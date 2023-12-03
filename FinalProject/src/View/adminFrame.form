@@ -192,38 +192,38 @@
                               <Group type="102" attributes="0">
                                   <Component id="lblIdentificación2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="txt_numero_identificacion2" min="-2" pref="181" max="-2" attributes="0"/>
+                                  <Component id="txtIdNumberVoter" min="-2" pref="181" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="lblFecha" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblClave" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblClave" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txt_clave" min="-2" pref="181" max="-2" attributes="0"/>
-                                      <Component id="txt_fecha_limite" min="-2" pref="181" max="-2" attributes="0"/>
+                                      <Component id="txtKey" min="-2" pref="181" max="-2" attributes="0"/>
+                                      <Component id="txtLimitDatePeriod" min="-2" pref="181" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="lblNombre2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="txt_nombre2" min="-2" pref="181" max="-2" attributes="0"/>
+                                  <Component id="txtNameVoter" min="-2" pref="181" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="lblEmail" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="txt_email" min="-2" pref="181" max="-2" attributes="0"/>
+                                  <Component id="txtEmailVoter" min="-2" pref="181" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="lblRuta2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="txt_telefono" min="-2" pref="181" max="-2" attributes="0"/>
+                                  <Component id="txtTelephoneVoter" min="-2" pref="181" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="lblAge" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="txt_Age" min="-2" pref="181" max="-2" attributes="0"/>
+                                  <Component id="txtAgeVoter" min="-2" pref="181" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -237,38 +237,38 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_numero_identificacion2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtIdNumberVoter" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblIdentificación2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_nombre2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtNameVoter" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblNombre2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_email" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtEmailVoter" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTelephoneVoter" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblRuta2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblAge" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_Age" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtAgeVoter" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblClave" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_clave" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtKey" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnGenerateKey" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_fecha_limite" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtLimitDatePeriod" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="26" max="32767" attributes="0"/>
@@ -277,7 +277,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="txt_numero_identificacion2">
+                <Component class="javax.swing.JTextField" name="txtIdNumberVoter">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblIdentificaci&#xf3;n2">
                   <Properties>
@@ -287,7 +287,7 @@
                     <Property name="text" type="java.lang.String" value="Cedula:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_nombre2">
+                <Component class="javax.swing.JTextField" name="txtNameVoter">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblNombre2">
                   <Properties>
@@ -297,7 +297,7 @@
                     <Property name="text" type="java.lang.String" value="Nombre:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_email">
+                <Component class="javax.swing.JTextField" name="txtEmailVoter">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblEmail">
                   <Properties>
@@ -307,7 +307,7 @@
                     <Property name="text" type="java.lang.String" value="Correo Electronico:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_telefono">
+                <Component class="javax.swing.JTextField" name="txtTelephoneVoter">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblRuta2">
                   <Properties>
@@ -325,7 +325,7 @@
                     <Property name="text" type="java.lang.String" value="Edad:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_Age">
+                <Component class="javax.swing.JTextField" name="txtAgeVoter">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblClave">
                   <Properties>
@@ -335,25 +335,25 @@
                     <Property name="text" type="java.lang.String" value="Clave:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_clave">
+                <Component class="javax.swing.JTextField" name="txtKey">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_claveActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtKeyActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblFecha">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Votar:"/>
+                    <Property name="text" type="java.lang.String" value="Periodo Para votar:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_fecha_limite">
+                <Component class="javax.swing.JTextField" name="txtLimitDatePeriod">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_fecha_limiteActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLimitDatePeriodActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnGenerateKey">
@@ -532,9 +532,9 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txt_start_date" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
-                              <Component id="txt_finish_date" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
-                              <Component id="txt_status" min="-2" pref="166" max="-2" attributes="0"/>
+                              <Component id="txtStartDatePeriods" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
+                              <Component id="txtFinishDatePeriods" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
+                              <Component id="txtStatusPeriod" min="-2" pref="166" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="34" max="32767" attributes="0"/>
                       </Group>
@@ -545,18 +545,18 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_start_date" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtStartDatePeriods" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblStart_date" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_finish_date" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtFinishDatePeriods" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblFinish_date" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_status" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtStatusPeriod" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="32" max="32767" attributes="0"/>
                       </Group>
@@ -564,7 +564,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="txt_start_date">
+                <Component class="javax.swing.JTextField" name="txtStartDatePeriods">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblStart_date">
                   <Properties>
@@ -574,7 +574,7 @@
                     <Property name="text" type="java.lang.String" value="Fecha de inicio:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_finish_date">
+                <Component class="javax.swing.JTextField" name="txtFinishDatePeriods">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblFinish_date">
                   <Properties>
@@ -584,7 +584,7 @@
                     <Property name="text" type="java.lang.String" value="Fecha de finalizaci&#xf3;n:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_status">
+                <Component class="javax.swing.JTextField" name="txtStatusPeriod">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblStatus">
                   <Properties>
@@ -772,13 +772,13 @@
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="txt_imagen" min="-2" pref="181" max="-2" attributes="0"/>
+                                  <Component id="txtImage" min="-2" pref="181" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="txt_nombre" min="-2" pref="181" max="-2" attributes="0"/>
-                              <Component id="txt_numero_identificacion" min="-2" pref="181" max="-2" attributes="0"/>
-                              <Component id="txt_partido_politico" min="-2" pref="181" max="-2" attributes="0"/>
+                              <Component id="txtNameCandidate" min="-2" pref="181" max="-2" attributes="0"/>
+                              <Component id="txtIdNumberCandidate" min="-2" pref="181" max="-2" attributes="0"/>
+                              <Component id="txtPoliticParty" min="-2" pref="181" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="10" max="32767" attributes="0"/>
                       </Group>
@@ -790,21 +790,21 @@
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblIdentificación1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_numero_identificacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtIdNumberCandidate" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtNameCandidate" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblNombre1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblPartidoPolítico1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txt_partido_politico" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtPoliticParty" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txt_imagen" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtImage" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblRuta1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -819,9 +819,9 @@
                     <Property name="text" type="java.lang.String" value="Cedula:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_numero_identificacion">
+                <Component class="javax.swing.JTextField" name="txtIdNumberCandidate">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_nombre">
+                <Component class="javax.swing.JTextField" name="txtNameCandidate">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblNombre1">
                   <Properties>
@@ -833,9 +833,9 @@
                     <Property name="text" type="java.lang.String" value="Patido Politico:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_partido_politico">
+                <Component class="javax.swing.JTextField" name="txtPoliticParty">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_imagen">
+                <Component class="javax.swing.JTextField" name="txtImage">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblRuta1">
                   <Properties>

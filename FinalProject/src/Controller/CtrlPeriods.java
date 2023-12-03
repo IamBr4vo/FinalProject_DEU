@@ -27,7 +27,6 @@ public class CtrlPeriods {
     private int id; // To maintain the ID of the selected period
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-
     public void loadDataPeriods(JTable table) {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         TableRowSorter<TableModel> order = new TableRowSorter<TableModel>(model);
@@ -44,6 +43,12 @@ public class CtrlPeriods {
         try {
             Date start_date = dateFormat.parse(startDate.getText());
             Date finish_date = dateFormat.parse(finishDate.getText());
+            // Validate that status is "Active" or "Inactive"
+            String statusValue = status.getText().trim().toLowerCase();
+            if (!statusValue.equals("activo") && !statusValue.equals("inactivo")) {
+                JOptionPane.showMessageDialog(null, "El estado debe ser 'Activo' o 'Inactivo'");
+                return;
+            }
             this.dao.create(new Periods(start_date, finish_date, status.getText()));
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(null, "Error de formato, el indicado es año-mes-día");
@@ -56,6 +61,12 @@ public class CtrlPeriods {
         try {
             Date start_date = dateFormat.parse(startDate.getText());
             Date finish_date = dateFormat.parse(finishDate.getText());
+            // Validate that status is "Active" or "Inactive"
+            String statusValue = status.getText().trim().toLowerCase();
+            if (!statusValue.equals("activo") && !statusValue.equals("inactivo")) {
+                JOptionPane.showMessageDialog(null, "El estado debe ser 'Activo' o 'Inactivo'");
+                return;  //Exit the method if the state is invalid
+            }
             this.dao.update(new Periods(this.id, start_date, finish_date, status.getText()));
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(null, "Error de formato, el indicado es año-mes-día");
@@ -89,12 +100,13 @@ public class CtrlPeriods {
         finishDate.setText("");
         status.setText("");
     }
+
     public Date[] getActivePeriodDates() {
         PeriodsDAO periodsDAO = new PeriodsDAO();
         return periodsDAO.getActivePeriodDates();
     }
-    
-    public Date[] getActivePeriods(JTextField fechaLimite){
+
+    public Date[] getActivePeriods(JTextField fechaLimite) {
         // Get active dates directly in the constructor
         Date[] activePeriodDates = getActivePeriodDates();
 
@@ -116,4 +128,3 @@ public class CtrlPeriods {
         return activePeriodDates;
     }
 }
-

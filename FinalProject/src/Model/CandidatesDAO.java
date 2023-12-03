@@ -97,6 +97,25 @@ public class CandidatesDAO {
         }
     }
 
+    public String getNameCandidate(int id) {
+        String name = "";
+        DBConnection db = new DBConnection();
+        String sql = "SELECT name FROM candidates WHERE id = ?";
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                name = resultSet.getString("name");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e.getMessage());
+        } finally {
+            db.disconnect();
+        }
+        return name;
+    }
+
     public void registVote(int idVotante, int idCandidato, int periodId) {
         DBConnection db = new DBConnection();
         String query = "INSERT INTO results (voter_id, candidate_id, period_id) VALUES (?, ?, ?)";
@@ -134,5 +153,31 @@ public class CandidatesDAO {
         }
 
         return hasVoted;
+    }
+
+    public List<CandidateVotes> getVotesCountPerCandidate() {
+        List<CandidateVotes> candidateVotesList = new ArrayList<>();
+
+        String query = "SELECT c.id, c.name AS candidateName, c.politic_party AS politicParty, COUNT(r.id) AS votesCount FROM candidates c LEFT JOIN results r ON c.id = r.candidate_id GROUP BY c.id, c.name, c.politic_party";
+        DBConnection db = new DBConnection();
+
+        try {
+            PreparedStatement ps = db.getConnection().prepareStatement(query);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int candidateId = resultSet.getInt("id");
+                String candidateName = resultSet.getString("candidateName");
+                String politicParty = resultSet.getString("politicParty");
+                int votesCount = resultSet.getInt("votesCount");
+                CandidateVotes candidateVotes = new CandidateVotes(candidateId, candidateName, votesCount, politicParty);
+                candidateVotesList.add(candidateVotes);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e.getMessage());
+        } finally {
+            db.disconnect();
+        }
+
+        return candidateVotesList;
     }
 }

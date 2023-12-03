@@ -40,26 +40,61 @@ public class CtrlUsers {
     }
 
     public void addUserForAdmin(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key) {
-        try {
-            this.dao.create(new Users(IDNumber.getText(), name.getText(), email.getText(), Integer.parseInt(age.getText()), Integer.parseInt(telephone.getText()), Integer.parseInt(key.getText()), rolId));
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al agregar el usuario: " + e.toString());
-        }
-    }
-    public void addUserForVoters(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key, JFrame currentFrame) {
-        try {
-            this.dao.create(new Users(IDNumber.getText(), name.getText(), email.getText(), Integer.parseInt(age.getText()), Integer.parseInt(telephone.getText()), Integer.parseInt(key.getText()), rolId));
-            if (rolId == 2) {
-                currentFrame.dispose();
+        // check if the ID already exists in the database
+        if (Validation.verificateIdNumberExistingForUsers(IDNumber.getText())) {
+            JOptionPane.showMessageDialog(null, "La cédula ya existe en la base de datos.");
+        } else {
+            try {
+                // check the format of the ID and others
+                if (!Validation.validateIdNumber(IDNumber.getText()) || !Validation.validateLyrics(name.getText()) || !Validation.validateEmail(email.getText()) || !Validation.validateNumbers(age.getText()) || !Validation.validateNumbers(telephone.getText())) {
+                    JOptionPane.showMessageDialog(null, "Error en la cedula, nombre, email, edad o telefono, por favor revise y digite un formato válido.");
+                } else {
+                    this.dao.create(new Users(IDNumber.getText(), name.getText(), email.getText(), Integer.parseInt(age.getText()), Integer.parseInt(telephone.getText()), Integer.parseInt(key.getText()), rolId));
+                    clearFields(IDNumber, name, email, age, telephone, key);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error al agregar el usuario: " + e.toString());
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al agregar el usuario: " + e.toString());
         }
     }
 
-    public void updateUser(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key) {
+    public void addUserForVoters(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key, JFrame currentFrame) {
+        // check if the ID already exists in the database
+        if (Validation.verificateIdNumberExistingForUsers(IDNumber.getText())) {
+            JOptionPane.showMessageDialog(null, "La cédula ya existe en la base de datos.");
+        } else {
+            try {
+                // check the format of the ID and the name
+                if (!Validation.validateIdNumber(IDNumber.getText()) || !Validation.validateLyrics(name.getText()) || !Validation.validateEmail(email.getText()) || !Validation.validateNumbers(age.getText()) || !Validation.validateNumbers(telephone.getText())) {
+                    JOptionPane.showMessageDialog(null, "Error en la cedula, nombre, email, edad o telefono, por favor revise y digite un formato válido.");
+                } else {
+                    this.dao.create(new Users(IDNumber.getText(), name.getText(), email.getText(), Integer.parseInt(age.getText()), Integer.parseInt(telephone.getText()), Integer.parseInt(key.getText()), rolId));
+                    if (rolId == 2) {
+                        currentFrame.dispose();
+                    }
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error al agregar el usuario: " + e.toString());
+            }
+        }
+    }
+
+    public void updateUser(JTable table, JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key) {
         try {
-            this.dao.update(new Users(this.id, IDNumber.getText(), name.getText(), email.getText(), Integer.parseInt(age.getText()), Integer.parseInt(telephone.getText()), Integer.parseInt(key.getText()), rolId));
+            int selectedRow = table.getSelectedRow();
+            int userId = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
+            // verificate if user is admin
+            Users selectedUser = getUserById(userId);
+            if (selectedUser != null && selectedUser.getRol_id() == 1) {
+                JOptionPane.showMessageDialog(null, "Los administradores no pueden ser editados", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            // check the format of the ID and the name
+            if (!Validation.validateIdNumber(IDNumber.getText()) || !Validation.validateLyrics(name.getText()) || !Validation.validateEmail(email.getText()) || !Validation.validateNumbers(age.getText()) || !Validation.validateNumbers(telephone.getText())) {
+                JOptionPane.showMessageDialog(null, "Error en la cedula, nombre, email, edad o telefono, por favor revise y digite un formato válido.");
+            } else {
+                this.dao.update(new Users(this.id, IDNumber.getText(), name.getText(), email.getText(), Integer.parseInt(age.getText()), Integer.parseInt(telephone.getText()), Integer.parseInt(key.getText()), rolId));
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al actualizar el usuario: " + e.toString());
         }
@@ -67,6 +102,17 @@ public class CtrlUsers {
 
     public void deleteUser() {
         this.dao.delete(this.id);
+    }
+
+    //Method to get a user by Id
+    public Users getUserById(int userId) {
+        List<Users> users = dao.read();
+        for (Users user : users) {
+            if (user.getId() == userId) {
+                return user;
+            }
+        }
+        return null;
     }
 
     public void selectedRow(JTable table, JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key) {
@@ -87,6 +133,7 @@ public class CtrlUsers {
             JOptionPane.showMessageDialog(null, "Error de selección, error: " + e.toString());
         }
     }
+
     //Method to generate 4 digit key
     public String generateRandomKey() {
         Random random = new Random();
@@ -94,9 +141,10 @@ public class CtrlUsers {
         return Integer.toString(key);
     }
 
-    public void clearFields(JTextField IDNumber, JTextField name, JTextField age, JTextField telephone, JTextField key) {
+    public void clearFields(JTextField IDNumber, JTextField name, JTextField email, JTextField age, JTextField telephone, JTextField key) {
         IDNumber.setText("");
         name.setText("");
+        email.setText("");
         age.setText("");
         telephone.setText("");
         key.setText("");
