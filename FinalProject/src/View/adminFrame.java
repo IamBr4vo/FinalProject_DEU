@@ -28,7 +28,7 @@ public class adminFrame extends javax.swing.JFrame {
     public adminFrame() {
         initComponents();
         setLocationRelativeTo(null);
-        listPeriods();
+        this.listPeriods();
         this.listCandidates();
         this.listVoters();
         generateKey();
@@ -40,7 +40,7 @@ public class adminFrame extends javax.swing.JFrame {
     }
 
     public void clearFiledsPeriods() {
-        pr.addPeriod(txtStartDatePeriods, txtFinishDatePeriods, txtStatusPeriod);
+        pr.clearFields(txtStartDatePeriods, txtFinishDatePeriods, txtStatusPeriod);
     }
 
     public void listVoters() {

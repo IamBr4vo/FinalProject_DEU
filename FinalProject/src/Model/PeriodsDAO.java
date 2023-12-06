@@ -42,10 +42,9 @@ public class PeriodsDAO {
         DBConnection db = new DBConnection();
         List<Periods> periods = new ArrayList<>();
         String sql = "SELECT * FROM periods";
-        String activePeriodsSQL = "SELECT * FROM periods WHERE status = 'Activo'";
 
         try {
-            PreparedStatement ps = db.getConnection().prepareStatement(activePeriodsSQL);
+            PreparedStatement ps = db.getConnection().prepareStatement(sql);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");

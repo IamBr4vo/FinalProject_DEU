@@ -47,9 +47,10 @@ public class CtrlPeriods {
             String statusValue = status.getText().trim().toLowerCase();
             if (!statusValue.equals("activo") && !statusValue.equals("inactivo")) {
                 JOptionPane.showMessageDialog(null, "El estado debe ser 'Activo' o 'Inactivo'");
-                return;
+            } else {
+                this.dao.create(new Periods(start_date, finish_date, statusValue));
+                clearFields(startDate, finishDate, status);
             }
-            this.dao.create(new Periods(start_date, finish_date, status.getText()));
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(null, "Error de formato, el indicado es año-mes-día");
         } catch (Exception e) {
@@ -65,9 +66,9 @@ public class CtrlPeriods {
             String statusValue = status.getText().trim().toLowerCase();
             if (!statusValue.equals("activo") && !statusValue.equals("inactivo")) {
                 JOptionPane.showMessageDialog(null, "El estado debe ser 'Activo' o 'Inactivo'");
-                return;  //Exit the method if the state is invalid
+            } else {
+                this.dao.update(new Periods(this.id, start_date, finish_date, statusValue));
             }
-            this.dao.update(new Periods(this.id, start_date, finish_date, status.getText()));
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(null, "Error de formato, el indicado es año-mes-día");
         } catch (Exception e) {
