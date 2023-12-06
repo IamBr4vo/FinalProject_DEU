@@ -37,19 +37,23 @@ public class login {
                 break;
             }
         }
-        int idVotante = authenticatedUser.getId();
-        CandidatesDAO candidateDAO = new CandidatesDAO();
-        PeriodsDAO periodsDAO = new PeriodsDAO();
-        int periodId = periodsDAO.getIdActivePeriod();
-        if (!candidateDAO.haVotadoEnPeriodo(idVotante, periodId)) {
-            //Displays the frame if the user has been authenticated.
-            if (isAuthenticated) {
-                openFrame();
+        try {
+            int idVotante = authenticatedUser.getId();
+            CandidatesDAO candidateDAO = new CandidatesDAO();
+            PeriodsDAO periodsDAO = new PeriodsDAO();
+            int periodId = periodsDAO.getIdActivePeriod();
+            if (!candidateDAO.haVotadoEnPeriodo(idVotante, periodId)) {
+                //Displays the frame if the user has been authenticated.
+                if (isAuthenticated) {
+                    openFrame();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Número de cédula incorrecto", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "Número de cédula incorrecto", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Ya ha votado en este periodo.", "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "Ya ha votado en este periodo.", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Número de cédula incorrecto", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
         }
     }
 

@@ -147,7 +147,7 @@ public class CtrlCandidates {
 
         ChartPanel chartPanel = new ChartPanel(grafic);
         chartPanel.setMouseWheelEnabled(true);
-        chartPanel.setPreferredSize(new Dimension(440, 510));
+        chartPanel.setPreferredSize(new Dimension(440, 738));
 
         jPanel.setLayout(new BorderLayout());
         jPanel.add(chartPanel, BorderLayout.CENTER);
